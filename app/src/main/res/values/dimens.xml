@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="sampleInteger">5</integer>
+    <integer-array name="sampleIntegerArray">
+        <item>1</item>
+        <item>10</item>
+        <item>100</item>
+        <item>1000</item>
+        <item>100</item>
+        <item>10</item>
+        <item>1</item>
+    </integer-array>
+    <string name="sampleString">Working String</string>
+    <string-array name="sampleStringArray">
+        <item>1</item>
+        <item>010</item>
+        <item>00100</item>
+        <item>0001000</item>
+        <item>00100</item>
+        <item>010</item>
+        <item>1</item>
+    </string-array>
+</resources>
