@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -20,7 +20,11 @@ fun getFormattedString(format: String, vararg objects: Any) =
     String.format(format, *objects)
 
 fun getFormattedString(stringId: Int, vararg objects: Any, context: Context = appCtx) =
-    String.format(stringRes(stringId, context), *objects)
+    String.format(
+        stringRes(
+            stringId,
+            context
+        ), *objects)
 
 fun drawableRes(@DrawableRes drawableId: Int, context: Context = appCtx) =
     ContextCompat.getDrawable(context, drawableId)

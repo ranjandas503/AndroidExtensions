@@ -1,6 +1,8 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.constantObjects
+
+import com.menasr.andy.AndyExtApp
 
 object Andy {
     /**Dispose all logs, means all logs are now not be printed

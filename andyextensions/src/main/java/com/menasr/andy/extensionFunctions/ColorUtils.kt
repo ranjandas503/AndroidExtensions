@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -42,7 +42,10 @@ fun getAttributeColor(context: Context, @AttrRes attr: Int): Int {
 fun getTitleTextColor(@ColorInt color: Int): Int {
     val darkness =
         1 - (0.299 * Color.red(color) + 0.587 * Color.green(color) + 0.114 * Color.blue(color)) / 255
-    return if (darkness < 0.35) getDarkerColor(color, 0.25f) else Color.WHITE
+    return if (darkness < 0.35) getDarkerColor(
+        color,
+        0.25f
+    ) else Color.WHITE
 }
 
 /**
@@ -108,7 +111,11 @@ fun getColorStateList(@ColorInt color: Int): ColorStateList {
         intArrayOf(android.R.attr.state_focused),
         intArrayOf()
     )
-    val colors = intArrayOf(getDarkerColor(color, 0.8f), getDarkerColor(color, 0.8f), color)
+    val colors = intArrayOf(
+        getDarkerColor(
+            color,
+            0.8f
+        ), getDarkerColor(color, 0.8f), color)
     return ColorStateList(states, colors)
 }
 

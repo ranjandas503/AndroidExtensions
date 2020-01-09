@@ -1,8 +1,9 @@
-package com.menasr.andy
+package com.menasr.andy.customClasses
 
 import android.os.Handler
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.menasr.andy.extensionFunctions.canClickAgain
 
 const val VIEW_TYPE_ITEM = 0
 const val VIEW_TYPE_LOADING = 1
@@ -16,6 +17,9 @@ abstract class LazyRecyclerAdapter<T, U : RecyclerView.ViewHolder, V : RecyclerV
     private var progressVisibility = false
     private var canLoadAgain: Boolean = true
     private var listener: LazyLoadRecyclerCallback? = null
+
+    /**Get actual list*/
+    fun getList() = list
 
     /**Every update on the value will reflected after 500ms*/
     fun canLazyLoadAgain(canLoadAgain: Boolean = true) {
@@ -31,7 +35,7 @@ abstract class LazyRecyclerAdapter<T, U : RecyclerView.ViewHolder, V : RecyclerV
     }
 
     /**Every list of items added will be reflected after 1 sec*/
-    fun addItems(list: List<T>) {
+    fun addItem(list: List<T>) {
         Handler().postDelayed({
             val oldPos = list.size
             this.list.addAll(list)
@@ -39,6 +43,20 @@ abstract class LazyRecyclerAdapter<T, U : RecyclerView.ViewHolder, V : RecyclerV
             if (!recyclerView.isComputingLayout)
                 notifyItemInserted(oldPos)
         }, 1000)
+    }
+
+    /**Add single item to the adapter,
+     * @param item to be added
+     * @param position send the position to add the item, else it will be added in last*/
+    fun addItem(item: T, position: Int? = null) {
+        Handler().postDelayed({
+            val oldPos = list.size
+            if (position == null)
+                list.add(item)
+            else list.add(position, item)
+            if (!recyclerView.isComputingLayout)
+                notifyItemInserted(position ?: oldPos)
+        }, 500)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

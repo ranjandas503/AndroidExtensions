@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.app.Activity
 import android.content.Context
@@ -14,13 +14,21 @@ fun showSnackShort(
     msg: String,
     snackBarDuration: Int = Snackbar.LENGTH_SHORT
 ) =
-    showSnackBar(currentContext, msg, snackBarDuration)
+    showSnackBar(
+        currentContext,
+        msg,
+        snackBarDuration
+    )
 
 fun showSnackShort(
     currentContext: Context, @StringRes stringResId: Int,
     snackBarDuration: Int = Snackbar.LENGTH_SHORT
 ) =
-    showSnackBar(currentContext, stringRes(stringResId), snackBarDuration)
+    showSnackBar(
+        currentContext,
+        stringRes(stringResId),
+        snackBarDuration
+    )
 
 private fun showSnackBar(currentContext: Context, msg: String, duration: Int) {
     Snackbar.make(

@@ -1,12 +1,13 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.content.Context
 import android.net.Uri
 import android.os.Environment
 import android.webkit.MimeTypeMap
 import androidx.core.content.FileProvider
+import com.menasr.andy.constantObjects.ConstantUtils
 import java.io.*
 import java.text.DecimalFormat
 import java.util.zip.ZipEntry
@@ -47,7 +48,7 @@ fun isExternalStorageReadable(): Boolean {
  * Get myme type of file
  *
  * @param url url of file
- * @return application/'filetype' like **application/pdf**
+ * @return application/'fileType' like **application/pdf**
  */
 fun getMimeType(url: String): String? {
     var type: String? = null
@@ -204,7 +205,11 @@ fun isExtStorageAvailable(): Boolean {
 @Throws(IOException::class)
 fun zipFiles(srcFiles: Collection<String>,
              zipFilePath: String): Boolean {
-    return zipFiles(srcFiles, zipFilePath, null)
+    return zipFiles(
+        srcFiles,
+        zipFilePath,
+        null
+    )
 }
 
 /**
@@ -225,7 +230,13 @@ fun zipFiles(srcFilePaths: Collection<String>?,
     try {
         zos = ZipOutputStream(FileOutputStream(zipFilePath))
         for (srcFile in srcFilePaths) {
-            if (!createZipFile(getFileByPath(srcFile)!!, "", zos, comment)) return false
+            if (!createZipFile(
+                    getFileByPath(srcFile)!!,
+                    "",
+                    zos,
+                    comment
+                )
+            ) return false
         }
         return true
     } finally {
@@ -267,7 +278,13 @@ fun zipFiles(srcFiles: Collection<File>?,
     try {
         zos = ZipOutputStream(FileOutputStream(zipFile))
         for (srcFile in srcFiles) {
-            if (!createZipFile(srcFile, "", zos, comment)) return false
+            if (!createZipFile(
+                    srcFile,
+                    "",
+                    zos,
+                    comment
+                )
+            ) return false
         }
         return true
     } finally {
@@ -289,7 +306,11 @@ fun zipFiles(srcFiles: Collection<File>?,
 @Throws(IOException::class)
 fun createZipFile(srcFilePath: String,
                   zipFilePath: String): Boolean {
-    return createZipFile(getFileByPath(srcFilePath), getFileByPath(zipFilePath), null)
+    return createZipFile(
+        getFileByPath(
+            srcFilePath
+        ), getFileByPath(zipFilePath), null
+    )
 }
 
 /**
@@ -305,7 +326,11 @@ fun createZipFile(srcFilePath: String,
 fun createZipFile(srcFilePath: String,
                   zipFilePath: String,
                   comment: String): Boolean {
-    return createZipFile(getFileByPath(srcFilePath), getFileByPath(zipFilePath), comment)
+    return createZipFile(
+        getFileByPath(
+            srcFilePath
+        ), getFileByPath(zipFilePath), comment
+    )
 }
 
 /**
@@ -319,7 +344,11 @@ fun createZipFile(srcFilePath: String,
 @Throws(IOException::class)
 fun createZipFile(srcFile: File,
                   zipFile: File): Boolean {
-    return createZipFile(srcFile, zipFile, null)
+    return createZipFile(
+        srcFile,
+        zipFile,
+        null
+    )
 }
 
 /**
@@ -339,7 +368,12 @@ fun createZipFile(srcFile: File?,
     var zos: ZipOutputStream? = null
     try {
         zos = ZipOutputStream(FileOutputStream(zipFile))
-        return createZipFile(srcFile, "", zos, comment)
+        return createZipFile(
+            srcFile,
+            "",
+            zos,
+            comment
+        )
     } finally {
         zos?.close()
     }
@@ -350,7 +384,10 @@ private fun createZipFile(srcFile: File,
                           rootPath: String,
                           zos: ZipOutputStream,
                           comment: String?): Boolean {
-    val modifiedPath = rootPath + (if (isSpace(rootPath)) "" else File.separator) + srcFile.name
+    val modifiedPath = rootPath + (if (isSpace(
+            rootPath
+        )
+    ) "" else File.separator) + srcFile.name
     if (srcFile.isDirectory) {
         val fileList = srcFile.listFiles()
         if (fileList == null || fileList.isEmpty()) {
@@ -360,7 +397,13 @@ private fun createZipFile(srcFile: File,
             zos.closeEntry()
         } else {
             for (file in fileList) {
-                if (!createZipFile(file, modifiedPath, zos, comment)) return false
+                if (!createZipFile(
+                        file,
+                        modifiedPath,
+                        zos,
+                        comment
+                    )
+                ) return false
             }
         }
     } else {
@@ -394,7 +437,11 @@ private fun createZipFile(srcFile: File,
 @Throws(IOException::class)
 fun unzipFile(zipFilePath: String,
               destDirPath: String): List<File>? {
-    return unzipFileByKeyword(zipFilePath, destDirPath, null)
+    return unzipFileByKeyword(
+        zipFilePath,
+        destDirPath,
+        null
+    )
 }
 
 /**
@@ -408,7 +455,11 @@ fun unzipFile(zipFilePath: String,
 @Throws(IOException::class)
 fun unzipFile(zipFile: File,
               destDir: File): List<File>? {
-    return unzipFileByKeyword(zipFile, destDir, null)
+    return unzipFileByKeyword(
+        zipFile,
+        destDir,
+        null
+    )
 }
 
 /**
@@ -424,7 +475,11 @@ fun unzipFile(zipFile: File,
 fun unzipFileByKeyword(zipFilePath: String,
                        destDirPath: String,
                        keyword: String?): List<File>? {
-    return unzipFileByKeyword(getFileByPath(zipFilePath), getFileByPath(destDirPath), keyword)
+    return unzipFileByKeyword(
+        getFileByPath(zipFilePath),
+        getFileByPath(destDirPath),
+        keyword
+    )
 }
 
 /**
@@ -449,21 +504,41 @@ fun unzipFileByKeyword(zipFile: File?,
             val entry = entries.nextElement() as ZipEntry
             val entryName = entry.name
             if (entryName.contains("../")) {
-                logAll("ZipUtils", "it's dangerous!")
+                logAll(
+                    "ZipUtils",
+                    "it's dangerous!"
+                )
                 return files
             }
-            if (!unzipChildFile(destDir, files, zf, entry, entryName)) return files
+            if (!unzipChildFile(
+                    destDir,
+                    files,
+                    zf,
+                    entry,
+                    entryName
+                )
+            ) return files
         }
     } else {
         while (entries.hasMoreElements()) {
             val entry = entries.nextElement() as ZipEntry
             val entryName = entry.name
             if (entryName.contains("../")) {
-                logAll("ZipUtils", "it's dangerous!")
+                logAll(
+                    "ZipUtils",
+                    "it's dangerous!"
+                )
                 return files
             }
             if (entryName.contains(keyword!!)) {
-                if (!unzipChildFile(destDir, files, zf, entry, entryName)) return files
+                if (!unzipChildFile(
+                        destDir,
+                        files,
+                        zf,
+                        entry,
+                        entryName
+                    )
+                ) return files
             }
         }
     }
@@ -510,7 +585,11 @@ private fun unzipChildFile(destDir: File,
  */
 @Throws(IOException::class)
 fun getFilesPath(zipFilePath: String): List<String>? {
-    return getFilesPath(getFileByPath(zipFilePath))
+    return getFilesPath(
+        getFileByPath(
+            zipFilePath
+        )
+    )
 }
 
 /**
@@ -540,7 +619,11 @@ fun getFilesPath(zipFile: File?): List<String>? {
  */
 @Throws(IOException::class)
 fun getComments(zipFilePath: String): List<String>? {
-    return getComments(getFileByPath(zipFilePath))
+    return getComments(
+        getFileByPath(
+            zipFilePath
+        )
+    )
 }
 
 /**

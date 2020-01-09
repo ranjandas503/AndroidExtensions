@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -53,7 +53,10 @@ fun circularRevealExit(view: View) {
  * @param animId anim id like R.anim.<id of anim>
  * @param view on which animation is to be performed
  * It will run in main thread*/
-fun startAnimation(animId: Int, view: View) = view.startAnimation((animRes(animId, view.context)))
+fun startAnimation(animId: Int, view: View) = view.startAnimation((animRes(
+    animId,
+    view.context
+)))
 
 /**Provide the animation and view , to start the animation,
  * @param animation animation file for animation
@@ -66,7 +69,10 @@ fun startAnimation(animation: Animation, view: View) = view.startAnimation(anima
  * @param animId provide the animation id which is present in anim folder
  * @param view view on which animation is to be performed*/
 fun startAnimationInSeparateThread(animId: Int, view: View) {
-    Handler(Looper.getMainLooper()).post { view.startAnimation((animRes(animId, view.context))) }
+    Handler(Looper.getMainLooper()).post { view.startAnimation((animRes(
+        animId,
+        view.context
+    ))) }
 }
 
 /**Provide the animation and view , to start the animation,

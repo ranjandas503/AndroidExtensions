@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.constantObjects
 
 object TimeConst {
     const val DAY = "DD"

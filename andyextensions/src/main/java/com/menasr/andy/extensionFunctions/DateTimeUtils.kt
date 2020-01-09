@@ -1,7 +1,8 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
+import com.menasr.andy.constantObjects.TimeConst
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -90,8 +91,8 @@ fun getDifferenceInMin(startTime: Long?, endTime: Long?): Int? {
  * don't use other values, in other cases it will return min only
  * @return hours as Long and minutes will be removed
  */
-fun getDifference(startTime: Long?, endTime: Long?, rTimeConst: String): Long? {
-    val difference = endTime!! - startTime!!
+fun getDifference(startTime: Long, endTime: Long, rTimeConst: String): Long {
+    val difference = endTime - startTime
     val days = difference / (1000 * 60 * 60 * 24)
     val hours = (difference - 1000 * 60 * 60 * 24 * days) / (1000 * 60 * 60)
     val min = (difference - 1000 * 60 * 60 * 24 * days - 1000 * 60 * 60 * hours) / (1000 * 60)
@@ -110,17 +111,17 @@ fun getDifference(startTime: Long?, endTime: Long?, rTimeConst: String): Long? {
  * You can also use **TimeConst** class, which is also included in library
  * @return String date time according to DateFormat
  */
-fun getDateTimeFromMillis(millis: Long, dateFormat: String): String {
-    return SimpleDateFormat(dateFormat, Locale.getDefault()).format(Date(millis))
-}
-
+fun getDateTimeFromMillis(millis: Long, dateFormat: String): String = SimpleDateFormat(dateFormat, Locale.getDefault()).format(Date(millis))
 
 /**
  * @param millis provide milliseconds
  * @return current system time in millis in String form with seconds to 00 in 24 hour format
  */
 fun getCurrentTimeStampWithSecRoundOff(millis: Long): String {
-    val ct = getDateTimeFromMillis(millis, TimeConst.TIME_24HOUR)
+    val ct = getDateTimeFromMillis(
+        millis,
+        TimeConst.TIME_24HOUR
+    )
     return ct.substring(0, ct.lastIndexOf(':')) + ":00"
 }
 
@@ -135,14 +136,20 @@ fun getCurTimeInMillis(): Long {
  * return current time 24 hour format
  */
 fun get24HourCurTime(): String {
-    return getDateTimeFromMillis(getCurTimeInMillis(), TimeConst.TIME_24HOUR)
+    return getDateTimeFromMillis(
+        getCurTimeInMillis(),
+        TimeConst.TIME_24HOUR
+    )
 }
 
 /**
  * @return current time in 12 hour format
  */
 fun get12HourCurTime(): String {
-    return getDateTimeFromMillis(getCurTimeInMillis(), TimeConst.TIME_12HOUR)
+    return getDateTimeFromMillis(
+        getCurTimeInMillis(),
+        TimeConst.TIME_12HOUR
+    )
 }
 
 /**
@@ -151,7 +158,10 @@ fun get12HourCurTime(): String {
  * @return current date in your given String format
  */
 fun getCurDate(format: String): String {
-    return getDateTimeFromMillis(getCurTimeInMillis(), format)
+    return getDateTimeFromMillis(
+        getCurTimeInMillis(),
+        format
+    )
 }
 
 /**
@@ -180,89 +190,45 @@ fun addRemMinToHHMM(currentHHMM: String, minutes_to_add: Int?): String {
 }
 
 
-fun getDaysFromMillis(millis: Long): Long {
-    return TimeUnit.MILLISECONDS.toDays(millis)
-}
+fun getDaysFromMillis(millis: Long) = TimeUnit.MILLISECONDS.toDays(millis)
 
-fun getDaysFromMinutes(min: Long): Long {
-    return TimeUnit.MINUTES.toDays(min)
-}
+fun getDaysFromMinutes(min: Long) = TimeUnit.MINUTES.toDays(min)
 
-fun getDaysFromHours(hours: Long): Long {
-    return TimeUnit.HOURS.toDays(hours)
-}
+fun getDaysFromHours(hours: Long) = TimeUnit.HOURS.toDays(hours)
 
-fun getDaysFromSeconds(seconds: Long): Long {
-    return TimeUnit.SECONDS.toDays(seconds)
-}
+fun getDaysFromSeconds(seconds: Long) = TimeUnit.SECONDS.toDays(seconds)
 
+fun getHourFromMillis(millis: Long) = TimeUnit.MILLISECONDS.toHours(millis)
 
-fun getHourFromMillis(millis: Long): Long {
-    return TimeUnit.MILLISECONDS.toHours(millis)
-}
+fun getHourFromSeconds(seconds: Long) = TimeUnit.SECONDS.toHours(seconds)
 
-fun getHourFromSeconds(seconds: Long): Long {
-    return TimeUnit.SECONDS.toHours(seconds)
-}
+fun getHourFromMinutes(min: Long) = TimeUnit.MINUTES.toHours(min)
 
-fun getHourFromMinutes(min: Long): Long {
-    return TimeUnit.MINUTES.toHours(min)
-}
+fun getHourFromDays(days: Long) = TimeUnit.DAYS.toHours(days)
 
-fun getHourFromDays(days: Long): Long {
-    return TimeUnit.DAYS.toHours(days)
-}
+fun getMinFromMillis(millis: Long) = TimeUnit.MILLISECONDS.toMinutes(millis)
 
+fun getMinFromSeconds(seconds: Long) = TimeUnit.SECONDS.toMinutes(seconds)
 
-fun getMinFromMillis(millis: Long): Long {
-    return TimeUnit.MILLISECONDS.toMinutes(millis)
-}
+fun getMinFromHours(hours: Long) = TimeUnit.HOURS.toMinutes(hours)
 
-fun getMinFromSeconds(seconds: Long): Long {
-    return TimeUnit.SECONDS.toMinutes(seconds)
-}
+fun getMinFromDays(days: Long) = TimeUnit.DAYS.toMinutes(days)
 
-fun getMinFromHours(hours: Long): Long {
-    return TimeUnit.HOURS.toMinutes(hours)
-}
+fun getSecFromMillis(millis: Long) = TimeUnit.MILLISECONDS.toSeconds(millis)
 
-fun getMinFromDays(days: Long): Long {
-    return TimeUnit.DAYS.toMinutes(days)
-}
+fun getSecFromMinute(min: Long) = TimeUnit.MINUTES.toSeconds(min)
 
+fun getSecFromHours(hours: Long) = TimeUnit.HOURS.toSeconds(hours)
 
-fun getSecFromMillis(millis: Long): Long {
-    return TimeUnit.MILLISECONDS.toSeconds(millis)
-}
+fun getSecFromDays(days: Long) = TimeUnit.DAYS.toSeconds(days)
 
-fun getSecFromMinute(min: Long): Long {
-    return TimeUnit.MINUTES.toSeconds(min)
-}
+fun getMillisFromSecond(millis: Long) = TimeUnit.MILLISECONDS.toSeconds(millis)
 
-fun getSecFromHours(hours: Long): Long {
-    return TimeUnit.HOURS.toSeconds(hours)
-}
+fun getMillisFromMinute(min: Long) = TimeUnit.MINUTES.toSeconds(min)
 
-fun getSecFromDays(days: Long): Long {
-    return TimeUnit.DAYS.toSeconds(days)
-}
+fun getMillisFromHours(hours: Long) = TimeUnit.HOURS.toSeconds(hours)
 
-
-fun getMillisFromSecond(millis: Long): Long {
-    return TimeUnit.MILLISECONDS.toSeconds(millis)
-}
-
-fun getMillisFromMinute(min: Long): Long {
-    return TimeUnit.MINUTES.toSeconds(min)
-}
-
-fun getMillisFromHours(hours: Long): Long {
-    return TimeUnit.HOURS.toSeconds(hours)
-}
-
-fun getMillisFromDays(days: Long): Long {
-    return TimeUnit.DAYS.toSeconds(days)
-}
+fun getMillisFromDays(days: Long) = TimeUnit.DAYS.toSeconds(days)
 
 /**
  * Method to get String date from millis

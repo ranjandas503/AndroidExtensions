@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.Manifest.permission.ACCESS_WIFI_STATE
 import android.Manifest.permission.INTERNET
@@ -17,6 +17,7 @@ import android.text.TextUtils
 import android.util.Base64
 import android.view.View
 import androidx.annotation.RequiresPermission
+import com.menasr.andy.constantObjects.ConstantUtils
 import java.io.File
 import java.net.InetAddress
 import java.net.NetworkInterface
@@ -110,7 +111,10 @@ fun getSDKVersionCode() = Build.VERSION.SDK_INT
  */
 @RequiresPermission(allOf = [ACCESS_WIFI_STATE, INTERNET])
 fun getMacAddress(context: Context): String {
-    return getMacAddress(context, *((null as Array<String>?)!!))
+    return getMacAddress(
+        context,
+        *((null as Array<String>?)!!)
+    )
 }
 
 /**
@@ -124,16 +128,30 @@ fun getMacAddress(context: Context): String {
  */
 @RequiresPermission(allOf = [ACCESS_WIFI_STATE, INTERNET])
 fun getMacAddress(context: Context, vararg excepts: String): String {
-    var macAddress = getMacAddressByWifiInfo(context)
-    if (isAddressNotInExcepts(macAddress, *excepts)) {
+    var macAddress =
+        getMacAddressByWifiInfo(context)
+    if (isAddressNotInExcepts(
+            macAddress,
+            *excepts
+        )
+    ) {
         return macAddress
     }
-    macAddress = getMacAddressByNetworkInterface()
-    if (isAddressNotInExcepts(macAddress, *excepts)) {
+    macAddress =
+        getMacAddressByNetworkInterface()
+    if (isAddressNotInExcepts(
+            macAddress,
+            *excepts
+        )
+    ) {
         return macAddress
     }
     macAddress = getMacAddressByInetAddress()
-    if (isAddressNotInExcepts(macAddress, *excepts)) {
+    if (isAddressNotInExcepts(
+            macAddress,
+            *excepts
+        )
+    ) {
         return macAddress
     }
 
@@ -283,11 +301,9 @@ fun getABIs(): Array<String> = Build.SUPPORTED_ABIS
 /**
  * Method to navigate user to app's play page
  * Make sure you have active **Internet Connection** before proceeding
- *
- * @param context just send the context of activity
  */
-fun toPlaystore(context: Context) {
-    val uri = Uri.parse(ConstantUtils.PLAYSTORELINK + context.packageName)
+fun Context.toPlaystore() {
+    val uri = Uri.parse(ConstantUtils.PLAYSTORELINK + packageName)
     val goToMarket = Intent(Intent.ACTION_VIEW, uri)
     // To count with Play market back stack, After pressing back button,
     // to taken back to our application, we need to add following flags to intent.
@@ -297,12 +313,12 @@ fun toPlaystore(context: Context) {
                 Intent.FLAG_ACTIVITY_MULTIPLE_TASK
     )
     try {
-        context.startActivity(goToMarket)
+        startActivity(goToMarket)
     } catch (e: ActivityNotFoundException) {
-        context.startActivity(
+        startActivity(
             Intent(
                 Intent.ACTION_VIEW,
-                Uri.parse(ConstantUtils.RETURN_LINK + context.packageName)
+                Uri.parse(ConstantUtils.RETURN_LINK + packageName)
             )
         )
     }

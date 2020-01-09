@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -21,21 +21,23 @@ fun getOpenURLIntent(url: String): Intent {
 /**
  * Open a url
  *
- * @param context                  context of acitiy
+ * @param context                  context of activity
  * @param url                      url to open
  * @param selectionTitle           title which is shown selecting options
  * @param exceptionMessageIfOccurs if exception occurs, this will be shown as toast,
  * You can send **null** if you don't want to show any toast
  */
-fun openURL(context: Context, url: String, selectionTitle: String,
+fun Context.openURL(url: String, selectionTitle: String,
             exceptionMessageIfOccurs: String?) {
     val intent = getOpenURLIntent(url)
     try {
         val chooser = Intent.createChooser(intent, selectionTitle)
-        context.startActivity(chooser)
+        startActivity(chooser)
     } catch (ex: ActivityNotFoundException) {
         if (exceptionMessageIfOccurs != null)
-            toastShort(exceptionMessageIfOccurs)
+            toastShort(
+                exceptionMessageIfOccurs
+            )
     }
 
 }
@@ -70,7 +72,9 @@ fun callPhone(context: Context, number: String, selectionTitle: String,
         context.startActivity(chooser)
     } catch (ex: ActivityNotFoundException) {
         if (exceptionMessageIfOccurs != null)
-            toastShort(exceptionMessageIfOccurs)
+            toastShort(
+                exceptionMessageIfOccurs
+            )
     }
 
 }
@@ -100,14 +104,17 @@ fun getSendSMSIntent(number: String, body: String): Intent {
  * pass **null** if you don't want to show the toast msg
  */
 fun sendSMS(context: Context, number: String, body: String, selectionTitle: String, exceptionMessageIfOccurs: String?) {
-    val intent = getSendSMSIntent(number, body)
+    val intent =
+        getSendSMSIntent(number, body)
 
     try {
         val chooser = Intent.createChooser(intent, selectionTitle)
         context.startActivity(chooser)
     } catch (ex: ActivityNotFoundException) {
         if (exceptionMessageIfOccurs != null)
-            toastShort(exceptionMessageIfOccurs)
+            toastShort(
+                exceptionMessageIfOccurs
+            )
     }
 
 }
@@ -143,14 +150,20 @@ fun getEmailIntent(address: String, subject: String, content: CharSequence): Int
  */
 fun sendEmail(context: Context, address: String, subject: String, content: CharSequence,
               selectionTitle: String, exceptionMessageIfOccurs: String?) {
-    val mailIntent = getEmailIntent(address, subject, content)
+    val mailIntent = getEmailIntent(
+        address,
+        subject,
+        content
+    )
 
     try {
         val chooser = Intent.createChooser(mailIntent, selectionTitle)
         context.startActivity(chooser)
     } catch (ex: ActivityNotFoundException) {
         if (exceptionMessageIfOccurs != null)
-            toastShort(exceptionMessageIfOccurs)
+            toastShort(
+                exceptionMessageIfOccurs
+            )
     }
 
 }

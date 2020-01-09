@@ -1,4 +1,4 @@
-package com.menasr.andy
+package com.menasr.andy.customClasses
 
 import android.app.Activity
 import android.content.Intent
@@ -8,7 +8,7 @@ import android.os.Build
 import android.provider.Settings
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.menasr.andy.ConstantUtils.PERMISSION_REQ_CODE
+import com.menasr.andy.constantObjects.ConstantUtils.PERMISSION_REQ_CODE
 import java.util.*
 
 /**Created by Ranjan on 27-Aug-2019

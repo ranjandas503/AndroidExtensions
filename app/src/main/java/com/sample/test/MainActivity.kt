@@ -2,8 +2,9 @@ package com.sample.test
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.menasr.andy.LazyRecyclerAdapter
-import com.menasr.andy.initRecyclerViewAdapter
+import com.menasr.andy.constantObjects.ConstantUtils
+import com.menasr.andy.customClasses.LazyRecyclerAdapter
+import com.menasr.andy.extensionFunctions.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,20 +15,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        loge(ConstantUtils.CHARACTER_POOL)
+
 
         val adapter = AdapterLazyRecycler(recyclerView)
         adapter.addLazyLoadCallback(object : LazyRecyclerAdapter.LazyLoadRecyclerCallback {
             override fun onLoadMore() {
                 if (count <= 20)
-                    adapter.addItems(generateMoreItems(5))
+                    adapter.addItem(generateMoreItems(5))
                 else adapter.canLazyLoadAgain(false)
             }
 
         })
 
-        initRecyclerViewAdapter(recyclerView, adapter)
+        initRecyclerViewAdapter(
+            recyclerView,
+            adapter
+        )
 
-        adapter.addItems(generateMoreItems(5))
+        adapter.addItem(generateMoreItems(5))
     }
 
     fun generateMoreItems(size: Int): MutableList<CustomModel> {

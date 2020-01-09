@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.app.Activity
 import android.content.Context
@@ -11,6 +11,7 @@ import android.view.WindowManager
 import androidx.annotation.ColorInt
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.menasr.andy.R
 
 /**
  * Method to set Status Bar Color
@@ -52,11 +53,20 @@ fun isStatusLightColor(@ColorInt color: Int): Boolean {
 @RequiresApi(Build.VERSION_CODES.M)
 fun setupStatusBarIconColor(context: Context?) {
     if (context == null) {
-        logAll("Color", "setupStatusBarIconColor() context is null")
+        logAll(
+            "Color",
+            "setupStatusBarIconColor() context is null"
+        )
         return
     }
-    val color = getAttributeColor(context, R.attr.colorPrimaryDark)
-    setupStatusBarIconColor(context, isStatusLightColor(color))
+    val color = getAttributeColor(
+        context,
+        R.attr.colorPrimaryDark
+    )
+    setupStatusBarIconColor(
+        context,
+        isStatusLightColor(color)
+    )
 }
 
 /**
@@ -70,7 +80,10 @@ fun setupStatusBarIconColor(context: Context, isLightToolbar: Boolean) {
 
     if (getSDKVersionCode() >= Build.VERSION_CODES.M) {
         if ((context as AppCompatActivity).window == null) {
-            logAll("Color", "setupStatusBarIconColor() getWindow() returns null")
+            logAll(
+                "Color",
+                "setupStatusBarIconColor() getWindow() returns null"
+            )
             return
         }
 
@@ -93,7 +106,10 @@ fun setupStatusBarIconColor(context: Context, isLightToolbar: Boolean) {
  */
 fun setTranslucentStatusBar(context: Context, translucent: Boolean) {
     if (context !is Activity) {
-        logAll("WindowHelper", "context must be instance of activity")
+        logAll(
+            "WindowHelper",
+            "context must be instance of activity"
+        )
         return
     }
 

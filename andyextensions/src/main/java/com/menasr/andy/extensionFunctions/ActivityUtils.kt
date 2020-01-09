@@ -1,4 +1,4 @@
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.app.Activity
 import android.content.Context.INPUT_METHOD_SERVICE

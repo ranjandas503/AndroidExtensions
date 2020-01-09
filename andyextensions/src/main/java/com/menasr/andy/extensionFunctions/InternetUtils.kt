@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.Manifest.permission.ACCESS_WIFI_STATE
 import android.Manifest.permission.INTERNET
@@ -13,11 +13,12 @@ import android.telephony.PhoneStateListener
 import android.telephony.ServiceState
 import android.telephony.TelephonyManager
 import androidx.annotation.RequiresPermission
+import com.menasr.andy.AndyExtApp
 
 /**
  * @return Connectivity Manager Object
  */
-fun getConnectivityManager(context: Context): ConnectivityManager? {
+fun getConnectivityManager(context: Context = AndyExtApp.appCtx): ConnectivityManager? {
     return context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 }
 
@@ -62,9 +63,9 @@ fun isNetworkConnected(): Boolean {
  *
  * @return "wifi" if wifi is using
  */
-fun getNetworkType(context: Context): String? {
+fun getNetworkType(): String? {
     val mTelephonyManager =
-        context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+        AndyExtApp.appCtx.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
     return when (mTelephonyManager.networkType) {
         TelephonyManager.NETWORK_TYPE_GPRS,
         TelephonyManager.NETWORK_TYPE_EDGE,
@@ -86,9 +87,9 @@ fun getNetworkType(context: Context): String? {
 }
 
 /**Check weather phone is in roaming or not*/
-fun checkForRoaming(context: Context): Boolean {
+fun checkForRoaming(): Boolean {
     var isRoaming = false
-    val telephonyManager = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+    val telephonyManager = AndyExtApp.appCtx.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
 
     object : PhoneStateListener() {
         override fun onServiceStateChanged(serviceState: ServiceState) {
