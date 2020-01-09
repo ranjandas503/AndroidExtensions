@@ -1,11 +1,12 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.ImageSpan
 import androidx.annotation.DrawableRes
+import com.menasr.andy.constantObjects.ConstantUtils
 
 /**
  * Method to convert String to ArrayList
@@ -17,7 +18,8 @@ import androidx.annotation.DrawableRes
 fun String.convertToArray(splitter: String): List<*> =
     listOf(*this.split(splitter.toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())
 
-fun String.isValidEmail(): Boolean = matches(ConstantUtils.EMAIL_REGEX1.toRegex()) && matches(ConstantUtils.EMAIL_REGEX2.toRegex())
+fun String.isValidEmail(): Boolean = matches(ConstantUtils.EMAIL_REGEX1.toRegex()) && matches(
+    ConstantUtils.EMAIL_REGEX2.toRegex())
 
 fun String.isValidName(): Boolean = matches(ConstantUtils.NAME_REGEX.toRegex())
 
@@ -39,7 +41,8 @@ fun String.lowerFirstLetter(): String {
 fun getIconifiedTitle(@DrawableRes drawableResourceId: Int): CharSequence {
     val sb = SpannableStringBuilder(" ")
 
-    val drawable = drawableRes(drawableResourceId)
+    val drawable =
+        drawableRes(drawableResourceId)
     if(drawable!=null) {
         drawable.setBounds(0, 0, drawable.intrinsicWidth, drawable.intrinsicHeight)
         val span = ImageSpan(drawable, ImageSpan.ALIGN_BOTTOM)

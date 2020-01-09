@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.app.Activity
 import android.content.Context
@@ -16,6 +16,7 @@ import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.view.ViewCompat.setBackground
+import com.menasr.andy.R
 import kotlin.math.min
 import kotlin.math.roundToInt
 
@@ -119,7 +120,9 @@ fun reduceBitmap(image: Bitmap, reduce: Int): Bitmap {
  * @param bitmap_image bitmap image
  */
 fun getCircleBitmap(context: Context, bitmap_image: Bitmap): Bitmap {
-    var output = BitmapFactory.decodeResource(context.resources, R.drawable.tranparent_view)
+    var output = BitmapFactory.decodeResource(context.resources,
+        R.drawable.tranparent_view
+    )
     try {
         val sic = min(bitmap_image.width, bitmap_image.height)
         val bitmap = ThumbnailUtils.extractThumbnail(bitmap_image, sic, sic)
@@ -220,8 +223,14 @@ fun getMutatedDrawable(context: Context, @DrawableRes resId: Int): Drawable? =
  * @return tinted drawable
  */
 fun getTintedDrawable(context: Context, @DrawableRes resId: Int, @ColorInt color: Int): Drawable? {
-    val drawable = getMutatedDrawable(context, resId)
-    return drawable?.let { getTintedDrawable(it, color) }
+    val drawable =
+        getMutatedDrawable(context, resId)
+    return drawable?.let {
+        getTintedDrawable(
+            it,
+            color
+        )
+    }
 }
 
 /**
@@ -287,7 +296,12 @@ fun resizeImage(imageData: ByteArray, targetWidth: Int, targetHeight: Int): Bitm
     BitmapFactory.decodeByteArray(imageData, 0, imageData.size, options)
 
     // Calculate inSampleSize
-    options.inSampleSize = calculateInSampleSize(options, targetWidth, targetHeight)
+    options.inSampleSize =
+        calculateInSampleSize(
+            options,
+            targetWidth,
+            targetHeight
+        )
 
     // Decode bitmap with inSampleSize set
     options.inJustDecodeBounds = false
@@ -324,7 +338,11 @@ fun resizeImageMaintainAspectRatio(imageData: ByteArray, shorterSideTarget: Int)
         targetWidth = shorterSideTarget
         targetHeight = (shorterSideTarget / ratio).roundToInt()
     }
-    return resizeImage(imageData, targetWidth, targetHeight)
+    return resizeImage(
+        imageData,
+        targetWidth,
+        targetHeight
+    )
 }
 
 /**
@@ -428,7 +446,10 @@ fun tileBackground(ctx: Context, layoutId: Int, viewToTileBg: View, resIdOfTile:
         }
 
     } catch (e: Exception) {
-        logAll("Tile Background", "Exception while tiling the background of the view")
+        logAll(
+            "Tile Background",
+            "Exception while tiling the background of the view"
+        )
     }
 
 }

@@ -1,11 +1,10 @@
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import java.lang.reflect.Constructor
 
 /**for passing single argument in viewModel*/
-@Suppress("unused")
 class ParametrizedFactory(private val T: Any) : ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         val constructor: Constructor<T> = modelClass.getDeclaredConstructor(T::class.java)

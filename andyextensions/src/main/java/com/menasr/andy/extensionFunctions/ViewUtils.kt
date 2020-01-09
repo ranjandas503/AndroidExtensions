@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.content.Context
 import android.graphics.drawable.GradientDrawable
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.LinearLayout
 import com.google.android.material.tabs.TabLayout
+import com.menasr.andy.constantObjects.ConstantUtils
 
 /**
  * Method which provides divider between Tab items

@@ -4,13 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.menasr.andy.LazyRecyclerAdapter
-import com.menasr.andy.visibility
+import com.menasr.andy.customClasses.LazyRecyclerAdapter
+import com.menasr.andy.extensionFunctions.visibility
 import kotlinx.android.synthetic.main.layout_sample.view.*
 import kotlinx.android.synthetic.main.lazy_progress.view.*
 
 class AdapterLazyRecycler(recyclerView: RecyclerView):
-    LazyRecyclerAdapter<CustomModel, CustomViewHolder,LazyLoadViewHolder>(recyclerView) {
+    LazyRecyclerAdapter<CustomModel, CustomViewHolder, LazyLoadViewHolder>(recyclerView) {
 
     override fun onBindHolder(holder: CustomViewHolder, data: CustomModel, position: Int) {
         holder.bindViews(data)

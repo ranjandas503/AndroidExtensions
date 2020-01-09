@@ -1,11 +1,12 @@
 @file:Suppress("unused", "MemberVisibilityCanBePrivate")
 
-package com.menasr.andy
+package com.menasr.andy.constantObjects
 
 import android.view.View
 
 object ConstantUtils {
 
+    val CHARACTER_POOL : List<Char> = ('a'..'z') + ('A'..'Z') + ('0'..'9')
     const val PERMISSION_REQ_CODE = 1001
     const val SHOW_VIEW = View.VISIBLE
     const val HIDE_VIEW = View.GONE

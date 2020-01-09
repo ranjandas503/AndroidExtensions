@@ -1,8 +1,9 @@
-package com.menasr.andy
+package com.menasr.andy.customClasses
 
 import android.os.Handler
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.menasr.andy.extensionFunctions.canClickAgain
 
 const val VIEW_TYPE_ITEM = 0
 const val VIEW_TYPE_LOADING = 1

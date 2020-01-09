@@ -1,16 +1,16 @@
 @file:Suppress("unused")
 
-package com.menasr.andy
+package com.menasr.andy.extensionFunctions
 
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import com.menasr.andy.ConstantUtils.LOC_MARKER_IN_MAPS_BY_ADDRESS
-import com.menasr.andy.ConstantUtils.LOC_MARKER_IN_MAPS_BY_LATLONG
-import com.menasr.andy.ConstantUtils.MAPS_URL
-import com.menasr.andy.ConstantUtils.SEARCH_PLACES
-import com.menasr.andy.ConstantUtils.SEARCH_PLACES_BY_LOCATION
+import com.menasr.andy.constantObjects.ConstantUtils.LOC_MARKER_IN_MAPS_BY_ADDRESS
+import com.menasr.andy.constantObjects.ConstantUtils.LOC_MARKER_IN_MAPS_BY_LATLONG
+import com.menasr.andy.constantObjects.ConstantUtils.MAPS_URL
+import com.menasr.andy.constantObjects.ConstantUtils.SEARCH_PLACES
+import com.menasr.andy.constantObjects.ConstantUtils.SEARCH_PLACES_BY_LOCATION
 
 /**
  * Show provided location maker in google maps
@@ -153,7 +153,11 @@ fun getMapCoordinatesIntent(latitude: Double, longitude: Double, markerTitle: St
  */
 fun showMapCoordinates(context: Context, latitude: Double, longitude: Double,
                        markerTitle: String, selectionTitle: String, exceptionMessageIfOccurs: String?) {
-    val intent = getMapCoordinatesIntent(latitude, longitude, markerTitle)
+    val intent = getMapCoordinatesIntent(
+        latitude,
+        longitude,
+        markerTitle
+    )
     try {
         val chooser = Intent.createChooser(intent, selectionTitle)
         context.startActivity(chooser)
@@ -193,7 +197,12 @@ fun getMapRouteIntent(latitudeFrom: Double, longitudeFrom: Double, latitudeTo: D
 fun showMapRoute(context: Context, latitudeFrom: Double, longitudeFrom: Double, latitudeTo: Double,
                  longitudeTo: Double, selectionTitle: String,
                  exceptionMessageIfOccurs: String?) {
-    val intent = getMapRouteIntent(latitudeFrom, longitudeFrom, latitudeTo, longitudeTo)
+    val intent = getMapRouteIntent(
+        latitudeFrom,
+        longitudeFrom,
+        latitudeTo,
+        longitudeTo
+    )
     try {
         val chooser = Intent.createChooser(intent, selectionTitle)
         context.startActivity(chooser)
