@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         adapter.addLazyLoadCallback(object : LazyRecyclerAdapter.LazyLoadRecyclerCallback {
             override fun onLoadMore() {
                 if (count <= 20)
-                    adapter.addItems(generateMoreItems(5))
+                    adapter.addItem(generateMoreItems(5))
                 else adapter.canLazyLoadAgain(false)
             }
 
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         initRecyclerViewAdapter(recyclerView, adapter)
 
-        adapter.addItems(generateMoreItems(5))
+        adapter.addItem(generateMoreItems(5))
     }
 
     fun generateMoreItems(size: Int): MutableList<CustomModel> {
