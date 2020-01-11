@@ -32,3 +32,5 @@ logr,loge,logv,logd and many more. While going to production, if you don't want 
 ```
 Andy.disposeAlllogs(true)
 ```
+
+There are tons of other functions and features, like lazy loading adapter, recycler view intialization apapter and much more. All the methods are self explainatory.
