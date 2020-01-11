@@ -2,9 +2,9 @@ package com.sample.test
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.menasr.andy.constantObjects.ConstantUtils
-import com.menasr.andy.customClasses.LazyRecyclerAdapter
-import com.menasr.andy.extensionFunctions.*
+import com.menasr.andyext.constantObjects.ConstantUtils
+import com.menasr.andyext.customClasses.LazyRecyclerAdapter
+import com.menasr.andyext.extensionFunctions.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
