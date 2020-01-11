@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.menasr.andy.customClasses.LazyRecyclerAdapter
-import com.menasr.andy.extensionFunctions.visibility
+import com.menasr.andyext.customClasses.LazyRecyclerAdapter
+import com.menasr.andyext.extensionFunctions.visibility
 import kotlinx.android.synthetic.main.layout_sample.view.*
 import kotlinx.android.synthetic.main.lazy_progress.view.*
 
