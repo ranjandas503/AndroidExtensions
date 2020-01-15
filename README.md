@@ -5,13 +5,13 @@
 
 Just add following dependency and you'r build gradle and your are good to go
 ```
-implementation 'com.menasr.andyext:andyextensions:1.0.2'
+implementation 'com.menasr.andyext:ranjan:1.0.2'
 ```
 Or
 ```
 <dependency>
-  <groupId>com.menasr.andy</groupId>
-  <artifactId>andy</artifactId>
+  <groupId>com.menasr.andyext</groupId>
+  <artifactId>ranjan</artifactId>
   <version>1.0.2</version>
   <type>pom</type>
 </dependency>
