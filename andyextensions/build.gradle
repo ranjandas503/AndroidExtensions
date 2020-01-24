@@ -42,7 +42,7 @@ publish {
     userOrg = 'shantiranjandas37'
     repoName = 'AndyExtensions'
     groupId = 'com.menasr.andyext'
-    artifactId = 'com.menasr.andyext'
+    artifactId = 'ranjan'
     publishVersion = '1.0.2'
     desc = 'Trying to solve the issues'
     website = 'https://github.com/ranjandas503/AndroidExtensions'
