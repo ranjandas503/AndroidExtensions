@@ -34,3 +34,7 @@ Andy.disposeAlllogs(true)
 ```
 
 There are tons of other functions and features, like lazy loading adapter, recycler view intialization apapter and much more. All the methods are self explainatory.
+
+
+### The complete documentation can be found in the wiki section.
+https://github.com/ranjandas503/AndroidExtensions/wiki
