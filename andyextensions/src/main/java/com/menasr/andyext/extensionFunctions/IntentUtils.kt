@@ -47,7 +47,7 @@ fun getSendSMSIntent(number: String, body: String): Intent {
 }
 
 /**
- * Get Gmail Intent
+ * Get GMail Intent
  *
  * @param address email address in which mail is to be send
  * @param subject subject of email
@@ -137,7 +137,7 @@ fun Context.sendSMS(number: String, body: String, selectionTitle: String, except
 /**
  * Send email
  *
- * @param content                  context of acitivity
+ * @param content                  context of activity
  * @param address                  email address
  * @param subject                  email subject
  * @param content                  body of email

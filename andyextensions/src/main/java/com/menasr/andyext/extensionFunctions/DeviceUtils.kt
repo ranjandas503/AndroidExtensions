@@ -1,14 +1,11 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "SpellCheckingInspection")
 
 package com.menasr.andyext.extensionFunctions
 
 import android.Manifest.permission.ACCESS_WIFI_STATE
 import android.Manifest.permission.INTERNET
 import android.annotation.SuppressLint
-import android.content.ActivityNotFoundException
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import android.net.wifi.WifiManager
 import android.os.Build
 import android.provider.Settings
@@ -17,7 +14,6 @@ import android.text.TextUtils
 import android.util.Base64
 import android.view.View
 import androidx.annotation.RequiresPermission
-import com.menasr.andyext.constantObjects.ConstantUtils
 import java.io.File
 import java.net.InetAddress
 import java.net.NetworkInterface
@@ -48,10 +44,10 @@ fun getRegionFromSimCard(context: Context): String =
     (context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager).simCountryIso
 
 /**
- * Method which provides boolean result for simcard
+ * Method which provides boolean result for simCard
  *
  * @param context provide the context
- * @return **ture** if sim card is present in device,
+ * @return **true** if sim card is present in device,
  * **false** if sim card is not present in device
  */
 fun isSimPresentInDevice(context: Context): Boolean {
@@ -65,6 +61,7 @@ fun isSimPresentInDevice(context: Context): Boolean {
  *
  * @return `true`: yes<br></br>`false`: no
  */
+@Suppress("SpellCheckingInspection")
 fun isDeviceRooted(): Boolean {
     val su = "su"
     val locations = arrayOf(

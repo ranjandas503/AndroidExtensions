@@ -66,7 +66,7 @@ fun Context.showMakerInGoogleMap(address: String): Boolean {
  * pass lat,long
  *
  * @param format  string format of which you will send parameters
- * @param objects objects seperated by comma, on the basis of format you defined
+ * @param objects objects separated by comma, on the basis of format you defined
  *
  *
  * example : format="geo:0,0?q=%s"

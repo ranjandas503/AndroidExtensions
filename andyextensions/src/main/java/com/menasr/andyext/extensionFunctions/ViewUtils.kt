@@ -12,8 +12,6 @@ import com.menasr.andyext.constantObjects.ConstantUtils
 
 /**
  * Method which provides divider between Tab items
- *
- * @param tabLayout          just pass your tab layout
  * @param color              int color of line
  * @param width              width of margin
  * @param height             height of margin

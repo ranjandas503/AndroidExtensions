@@ -156,7 +156,7 @@ fun getCircleBitmap(context: Context, bitmap_image: Bitmap): Bitmap {
 /**
  * Get drawable and generate bitmap
  *
- * @param context context of acitivity
+ * @param context context of activity
  * @param resId   resId of Drawable
  * @return Bitmap
  */
@@ -169,10 +169,10 @@ fun toBitmap(context: Context, @DrawableRes resId: Int): Bitmap? {
  * Pass the drawable to get bitmap
  *
  * @param drawable drawable
- * @return Bitmam
+ * @return Bitmap
  *
  *
- * In case of OutofMemoryException you will get "null"
+ * In case of OutOfMemoryException you will get "null"
  */
 fun toBitmap(drawable: Drawable): Bitmap? {
     return try {
@@ -346,7 +346,7 @@ fun resizeImageMaintainAspectRatio(imageData: ByteArray, shorterSideTarget: Int)
 }
 
 /**
- * Get Dimentions of Image
+ * Get Dimension's of Image
  *
  * @param imageData pass byte[] image
  * @return Pair object

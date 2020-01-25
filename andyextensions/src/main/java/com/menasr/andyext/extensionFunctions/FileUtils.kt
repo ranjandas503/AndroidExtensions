@@ -45,7 +45,7 @@ fun isExternalStorageReadable(): Boolean {
 }
 
 /**
- * Get myme type of file
+ * Get mime type of file
  *
  * @param url url of file
  * @return application/'fileType' like **application/pdf**
@@ -84,7 +84,7 @@ fun getDirectorySize(file: File): Long {
  * Clear/Delete all the contents in file/Directory
  *
  * @param file file/folder
- * @return true on successfull deletion of all content
+ * @return true on successful deletion of all content
  * **Make sure file it is not null or you have the permission**
  */
 fun clearDirectory(file: File): Boolean {
@@ -100,7 +100,7 @@ fun clearDirectory(file: File): Boolean {
  *
  * @param file   this file content will be copied to
  * @param target target file/folder
- * @return boolean status on successfull completion
+ * @return boolean status on successful completion
  */
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 fun copy(file: File, target: File): Boolean {
@@ -134,7 +134,7 @@ fun copy(file: File, target: File): Boolean {
  *
  * @param files no. of files to make a zip
  * @param file  where it is stored
- * @return file/folder path on successfull process
+ * @return file/folder path on successful process
  */
 fun createZip(files: List<String>, file: File,bufferSize : Int = 2048): String? {
     try {
@@ -169,7 +169,7 @@ fun createZip(files: List<String>, file: File,bufferSize : Int = 2048): String? 
 }
 
 /**
- * Methot to get uri from file
+ * Method to get uri from file
  *
  * @param context       context of activity
  * @param applicationId id of application

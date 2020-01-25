@@ -1,4 +1,4 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "SpellCheckingInspection")
 
 package com.menasr.andyext.extensionFunctions
 
@@ -165,7 +165,7 @@ fun getCurDate(format: String): String {
 }
 
 /**
- * method to provide **HH:MM:SS** after adding miutes to current **HH:MM**
+ * method to provide **HH:MM:SS** after adding minutes to current **HH:MM**
  *
  * @param currentHHMM    must provide time in **HH:MM** format
  * @param minutes_to_add send minutes to add or remove

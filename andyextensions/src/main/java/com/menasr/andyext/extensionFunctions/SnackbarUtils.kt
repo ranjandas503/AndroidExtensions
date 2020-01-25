@@ -2,12 +2,14 @@
 
 package com.menasr.andyext.extensionFunctions
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.view.View
 import androidx.annotation.StringRes
 import com.google.android.material.snackbar.Snackbar
 
+@SuppressLint("StaticFieldLeak")
 private var snackbar:Snackbar?=null
 
 /**Show snackBar
