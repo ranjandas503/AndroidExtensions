@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.menasr.andyext.customClasses
 
 import android.os.Handler
@@ -22,6 +24,16 @@ abstract class RecyclerAdapter<T, U : RecyclerView.ViewHolder>(private val recyc
         }, 1000)
     }
 
+    /**Remove the item from the list*/
+    fun removeItem(item : T) = removeItem(list.indexOf(item))
+
+    /**Remove the item from the list with position*/
+    @Suppress("MemberVisibilityCanBePrivate")
+    fun removeItem(position: Int){
+        list.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
     /**Add single item to the adapter,
      * @param item to be added
      * @param position send the position to add the item, else it will be added in last*/
@@ -35,14 +47,12 @@ abstract class RecyclerAdapter<T, U : RecyclerView.ViewHolder>(private val recyc
         }, 500)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        onCreateHolder(parent, viewType)
-
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = onCreateHolder(parent, viewType)
     override fun getItemCount() = list.size
+    override fun onBindViewHolder(holder: U, position: Int) = onBindHolder(holder,list[position], position)
 
-    override fun onBindViewHolder(holder: U, position: Int) = onBindHolder(holder, position)
 
-    abstract fun onBindHolder(holder: U, position: Int)
+    abstract fun onBindHolder(holder: U, data: T, position: Int)
     abstract fun onCreateHolder(parent: ViewGroup, viewType: Int): U
 
 }

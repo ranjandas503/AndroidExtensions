@@ -18,17 +18,21 @@ import com.menasr.andyext.constantObjects.ConstantUtils
 fun String.convertToArray(splitter: String): List<*> =
     listOf(*this.split(splitter.toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())
 
+/**Checks weather email is valid or not*/
 fun String.isValidEmail(): Boolean = matches(ConstantUtils.EMAIL_REGEX1.toRegex()) && matches(
     ConstantUtils.EMAIL_REGEX2.toRegex())
 
+/**Checks weather name is valid or not*/
 fun String.isValidName(): Boolean = matches(ConstantUtils.NAME_REGEX.toRegex())
 
+/**Capitalize first character of each word.*/
 fun String.upperFirstLetter(): String {
     return if (!Character.isLowerCase(this[0])) this else (this[0].toInt() - 32).toChar().toString() + this.substring(
         1
     )
 }
 
+/**De-Capitalize first character of each word*/
 fun String.lowerFirstLetter(): String {
     return if (!Character.isUpperCase(this[0])) this else (this[0].toInt() + 32).toChar().toString() + this.substring(
         1

@@ -19,11 +19,8 @@ import com.menasr.andyext.constantObjects.ConstantUtils
  * @param height             height of margin
  * @param paddingFromDivider padding from divider, it will applied to both side of margin
  */
-fun addMarginInTabLayout(
-    tabLayout: TabLayout, color: Int, width: Int, height: Int,
-    paddingFromDivider: Int
-) {
-    val linearLayout = tabLayout.getChildAt(0) as LinearLayout
+fun TabLayout.addMarginInTabLayout(color: Int, width: Int, height: Int, paddingFromDivider: Int) {
+    val linearLayout = getChildAt(0) as LinearLayout
     linearLayout.showDividers = LinearLayout.SHOW_DIVIDER_MIDDLE
     val drawable = GradientDrawable()
     drawable.setColor(color)

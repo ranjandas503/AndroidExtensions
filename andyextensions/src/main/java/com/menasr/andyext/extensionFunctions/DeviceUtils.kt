@@ -254,7 +254,8 @@ fun getAndroidID(context: Context): String {
 }
 
 
-@SuppressLint("HardwareIds", "MissingPermission")
+@SuppressLint("HardwareIds")
+@RequiresPermission(ACCESS_WIFI_STATE)
 private fun getMacAddressByWifiInfo(context: Context): String {
     try {
         val wifi = context.applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
@@ -296,34 +297,6 @@ fun getModel(): String {
  * @return an ordered list of ABIs supported by this device
  */
 fun getABIs(): Array<String> = Build.SUPPORTED_ABIS
-
-
-/**
- * Method to navigate user to app's play page
- * Make sure you have active **Internet Connection** before proceeding
- */
-fun Context.toPlaystore() {
-    val uri = Uri.parse(ConstantUtils.PLAYSTORELINK + packageName)
-    val goToMarket = Intent(Intent.ACTION_VIEW, uri)
-    // To count with Play market back stack, After pressing back button,
-    // to taken back to our application, we need to add following flags to intent.
-    goToMarket.addFlags(
-        Intent.FLAG_ACTIVITY_NO_HISTORY or
-                Intent.FLAG_ACTIVITY_NEW_DOCUMENT or
-                Intent.FLAG_ACTIVITY_MULTIPLE_TASK
-    )
-    try {
-        startActivity(goToMarket)
-    } catch (e: ActivityNotFoundException) {
-        startActivity(
-            Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse(ConstantUtils.RETURN_LINK + packageName)
-            )
-        )
-    }
-
-}
 
 /***
  * Computes RFC 2104-compliant HMAC signature. This can be used to sign the Amazon S3

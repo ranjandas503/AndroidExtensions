@@ -2,9 +2,7 @@
 
 package com.menasr.andyext.extensionFunctions
 
-import android.Manifest.permission.ACCESS_WIFI_STATE
-import android.Manifest.permission.INTERNET
-import android.annotation.SuppressLint
+import android.Manifest.permission.*
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
@@ -31,8 +29,7 @@ fun getConnectivityManager(context: Context = AndyExtApp.appCtx): ConnectivityMa
  * and false(if network is not present)
  */
 @Suppress("DEPRECATION")
-@SuppressLint("MissingPermission")
-@RequiresPermission(allOf = [ACCESS_WIFI_STATE, INTERNET])
+@RequiresPermission(allOf = [ACCESS_WIFI_STATE, INTERNET, ACCESS_NETWORK_STATE])
 fun isNetworkConnected(): Boolean {
     val connectivityManager =
         AndyExtApp.appCtx.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

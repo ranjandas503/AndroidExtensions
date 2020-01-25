@@ -222,7 +222,7 @@ fun getSecFromHours(hours: Long) = TimeUnit.HOURS.toSeconds(hours)
 
 fun getSecFromDays(days: Long) = TimeUnit.DAYS.toSeconds(days)
 
-fun getMillisFromSecond(millis: Long) = TimeUnit.MILLISECONDS.toSeconds(millis)
+fun getMillisFromSecond(seconds: Long) = TimeUnit.MILLISECONDS.toSeconds(seconds)
 
 fun getMillisFromMinute(min: Long) = TimeUnit.MINUTES.toSeconds(min)
 

@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.menasr.andyext.customClasses
 
 import android.os.Handler
@@ -57,6 +59,16 @@ abstract class LazyRecyclerAdapter<T, U : RecyclerView.ViewHolder, V : RecyclerV
             if (!recyclerView.isComputingLayout)
                 notifyItemInserted(position ?: oldPos)
         }, 500)
+    }
+
+    /**Remove the item from the list*/
+    fun removeItem(item : T) = removeItem(list.indexOf(item))
+
+    /**Remove the item from the list with position*/
+    @Suppress("MemberVisibilityCanBePrivate")
+    fun removeItem(position: Int){
+        list.removeAt(position)
+        notifyItemRemoved(position)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
