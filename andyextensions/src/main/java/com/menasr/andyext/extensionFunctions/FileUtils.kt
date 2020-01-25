@@ -20,7 +20,7 @@ import kotlin.math.pow
  * @param size pass size in bytes and it will calculate it,
  * Weather it is byte=B,Kilobyte = KB, Megabyte = MB, GigaByte=GB, TeraByte = TB
  */
-fun getFileSize(size: Long): String {
+fun getSizeFromBytes(size: Long): String {
     if (size <= 0)
         return ""
     val units = arrayOf("B", "KB", "MB", "GB", "TB")
@@ -45,7 +45,7 @@ fun isExternalStorageReadable(): Boolean {
 }
 
 /**
- * Get myme type of file
+ * Get mime type of file
  *
  * @param url url of file
  * @return application/'fileType' like **application/pdf**
@@ -84,8 +84,8 @@ fun getDirectorySize(file: File): Long {
  * Clear/Delete all the contents in file/Directory
  *
  * @param file file/folder
- * @return true on successfull deletion of all content
- * **Make sure file it is not null**
+ * @return true on successful deletion of all content
+ * **Make sure file it is not null or you have the permission**
  */
 fun clearDirectory(file: File): Boolean {
     if (file.isDirectory)
@@ -100,7 +100,7 @@ fun clearDirectory(file: File): Boolean {
  *
  * @param file   this file content will be copied to
  * @param target target file/folder
- * @return boolean status on successfull completion
+ * @return boolean status on successful completion
  */
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 fun copy(file: File, target: File): Boolean {
@@ -134,7 +134,7 @@ fun copy(file: File, target: File): Boolean {
  *
  * @param files no. of files to make a zip
  * @param file  where it is stored
- * @return file/folder path on successfull process
+ * @return file/folder path on successful process
  */
 fun createZip(files: List<String>, file: File,bufferSize : Int = 2048): String? {
     try {
@@ -169,7 +169,7 @@ fun createZip(files: List<String>, file: File,bufferSize : Int = 2048): String? 
 }
 
 /**
- * Methot to get uri from file
+ * Method to get uri from file
  *
  * @param context       context of activity
  * @param applicationId id of application
@@ -270,9 +270,7 @@ fun zipFiles(srcFiles: Collection<File>, zipFile: File): Boolean {
  * @throws IOException if an I/O error has occurred
  */
 @Throws(IOException::class)
-fun zipFiles(srcFiles: Collection<File>?,
-             zipFile: File?,
-             comment: String?): Boolean {
+fun zipFiles(srcFiles: Collection<File>?, zipFile: File?, comment: String?): Boolean {
     if (srcFiles == null || zipFile == null) return false
     var zos: ZipOutputStream? = null
     try {
@@ -304,8 +302,7 @@ fun zipFiles(srcFiles: Collection<File>?,
  * @throws IOException if an I/O error has occurred
  */
 @Throws(IOException::class)
-fun createZipFile(srcFilePath: String,
-                  zipFilePath: String): Boolean {
+fun createZipFile(srcFilePath: String, zipFilePath: String): Boolean {
     return createZipFile(
         getFileByPath(
             srcFilePath
@@ -323,9 +320,7 @@ fun createZipFile(srcFilePath: String,
  * @throws IOException if an I/O error has occurred
  */
 @Throws(IOException::class)
-fun createZipFile(srcFilePath: String,
-                  zipFilePath: String,
-                  comment: String): Boolean {
+fun createZipFile(srcFilePath: String, zipFilePath: String, comment: String): Boolean {
     return createZipFile(
         getFileByPath(
             srcFilePath
@@ -342,8 +337,7 @@ fun createZipFile(srcFilePath: String,
  * @throws IOException if an I/O error has occurred
  */
 @Throws(IOException::class)
-fun createZipFile(srcFile: File,
-                  zipFile: File): Boolean {
+fun createZipFile(srcFile: File, zipFile: File): Boolean {
     return createZipFile(
         srcFile,
         zipFile,
@@ -361,9 +355,7 @@ fun createZipFile(srcFile: File,
  * @throws IOException if an I/O error has occurred
  */
 @Throws(IOException::class)
-fun createZipFile(srcFile: File?,
-                  zipFile: File?,
-                  comment: String?): Boolean {
+fun createZipFile(srcFile: File?, zipFile: File?, comment: String?): Boolean {
     if (srcFile == null || zipFile == null) return false
     var zos: ZipOutputStream? = null
     try {
@@ -380,10 +372,7 @@ fun createZipFile(srcFile: File?,
 }
 
 @Throws(IOException::class)
-private fun createZipFile(srcFile: File,
-                          rootPath: String,
-                          zos: ZipOutputStream,
-                          comment: String?): Boolean {
+private fun createZipFile(srcFile: File, rootPath: String, zos: ZipOutputStream, comment: String?): Boolean {
     val modifiedPath = rootPath + (if (isSpace(
             rootPath
         )
@@ -435,8 +424,7 @@ private fun createZipFile(srcFile: File,
  * @throws IOException if unzip unsuccessfully
  */
 @Throws(IOException::class)
-fun unzipFile(zipFilePath: String,
-              destDirPath: String): List<File>? {
+fun unzipFile(zipFilePath: String, destDirPath: String): List<File>? {
     return unzipFileByKeyword(
         zipFilePath,
         destDirPath,
@@ -453,8 +441,7 @@ fun unzipFile(zipFilePath: String,
  * @throws IOException if unzip unsuccessfully
  */
 @Throws(IOException::class)
-fun unzipFile(zipFile: File,
-              destDir: File): List<File>? {
+fun unzipFile(zipFile: File, destDir: File): List<File>? {
     return unzipFileByKeyword(
         zipFile,
         destDir,
@@ -472,9 +459,7 @@ fun unzipFile(zipFile: File,
  * @throws IOException if unzip unsuccessfully
  */
 @Throws(IOException::class)
-fun unzipFileByKeyword(zipFilePath: String,
-                       destDirPath: String,
-                       keyword: String?): List<File>? {
+fun unzipFileByKeyword(zipFilePath: String, destDirPath: String, keyword: String?): List<File>? {
     return unzipFileByKeyword(
         getFileByPath(zipFilePath),
         getFileByPath(destDirPath),
@@ -492,9 +477,7 @@ fun unzipFileByKeyword(zipFilePath: String,
  * @throws IOException if unzip unsuccessfully
  */
 @Throws(IOException::class)
-fun unzipFileByKeyword(zipFile: File?,
-                       destDir: File?,
-                       keyword: String?): List<File>? {
+fun unzipFileByKeyword(zipFile: File?, destDir: File?, keyword: String?): List<File>? {
     if (zipFile == null || destDir == null) return null
     val files = ArrayList<File>()
     val zf = ZipFile(zipFile)
@@ -546,11 +529,7 @@ fun unzipFileByKeyword(zipFile: File?,
 }
 
 @Throws(IOException::class)
-private fun unzipChildFile(destDir: File,
-                           files: MutableList<File>,
-                           zf: ZipFile,
-                           entry: ZipEntry,
-                           entryName: String): Boolean {
+private fun unzipChildFile(destDir: File, files: MutableList<File>, zf: ZipFile, entry: ZipEntry, entryName: String): Boolean {
     val filePath = destDir.toString() + File.separator + entryName
     val file = File(filePath)
     files.add(file)

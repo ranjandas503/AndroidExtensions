@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.menasr.andyext.extensionFunctions
 
 import android.os.SystemClock
@@ -52,4 +54,10 @@ fun <T : RecyclerView.Adapter<*>> initRecyclerViewAdapter(
         adapter = yourAdapter
         setHasFixedSize(fixedSize)
     }
+}
+
+/**Remove duplicates of array
+ * @param duplicates provide array for duplication check*/
+inline fun <reified T>removeDuplicateFromArray(duplicates: Array<T>): Array<T> {
+    return listOf(*duplicates).toSet().toTypedArray()
 }

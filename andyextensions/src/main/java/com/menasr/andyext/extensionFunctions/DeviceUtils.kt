@@ -1,14 +1,11 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "SpellCheckingInspection")
 
 package com.menasr.andyext.extensionFunctions
 
 import android.Manifest.permission.ACCESS_WIFI_STATE
 import android.Manifest.permission.INTERNET
 import android.annotation.SuppressLint
-import android.content.ActivityNotFoundException
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import android.net.wifi.WifiManager
 import android.os.Build
 import android.provider.Settings
@@ -17,7 +14,6 @@ import android.text.TextUtils
 import android.util.Base64
 import android.view.View
 import androidx.annotation.RequiresPermission
-import com.menasr.andyext.constantObjects.ConstantUtils
 import java.io.File
 import java.net.InetAddress
 import java.net.NetworkInterface
@@ -48,10 +44,10 @@ fun getRegionFromSimCard(context: Context): String =
     (context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager).simCountryIso
 
 /**
- * Method which provides boolean result for simcard
+ * Method which provides boolean result for simCard
  *
  * @param context provide the context
- * @return **ture** if sim card is present in device,
+ * @return **true** if sim card is present in device,
  * **false** if sim card is not present in device
  */
 fun isSimPresentInDevice(context: Context): Boolean {
@@ -65,6 +61,7 @@ fun isSimPresentInDevice(context: Context): Boolean {
  *
  * @return `true`: yes<br></br>`false`: no
  */
+@Suppress("SpellCheckingInspection")
 fun isDeviceRooted(): Boolean {
     val su = "su"
     val locations = arrayOf(
@@ -254,7 +251,8 @@ fun getAndroidID(context: Context): String {
 }
 
 
-@SuppressLint("HardwareIds", "MissingPermission")
+@SuppressLint("HardwareIds")
+@RequiresPermission(ACCESS_WIFI_STATE)
 private fun getMacAddressByWifiInfo(context: Context): String {
     try {
         val wifi = context.applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
@@ -296,34 +294,6 @@ fun getModel(): String {
  * @return an ordered list of ABIs supported by this device
  */
 fun getABIs(): Array<String> = Build.SUPPORTED_ABIS
-
-
-/**
- * Method to navigate user to app's play page
- * Make sure you have active **Internet Connection** before proceeding
- */
-fun Context.toPlaystore() {
-    val uri = Uri.parse(ConstantUtils.PLAYSTORELINK + packageName)
-    val goToMarket = Intent(Intent.ACTION_VIEW, uri)
-    // To count with Play market back stack, After pressing back button,
-    // to taken back to our application, we need to add following flags to intent.
-    goToMarket.addFlags(
-        Intent.FLAG_ACTIVITY_NO_HISTORY or
-                Intent.FLAG_ACTIVITY_NEW_DOCUMENT or
-                Intent.FLAG_ACTIVITY_MULTIPLE_TASK
-    )
-    try {
-        startActivity(goToMarket)
-    } catch (e: ActivityNotFoundException) {
-        startActivity(
-            Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse(ConstantUtils.RETURN_LINK + packageName)
-            )
-        )
-    }
-
-}
 
 /***
  * Computes RFC 2104-compliant HMAC signature. This can be used to sign the Amazon S3

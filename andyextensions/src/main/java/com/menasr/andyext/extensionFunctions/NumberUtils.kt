@@ -21,17 +21,33 @@ fun lowPassFilter(input: FloatArray, output: FloatArray?, filter: Float): FloatA
     return output
 }
 
-fun getRandomInt() = Random.nextInt(0, 1000)
+/**Get a random int number
+ * @param fromNo starting number
+ * @param toNo ending number*/
+fun getRandomInt(fromNo: Int = 0, toNo: Int = 1000) = Random.nextInt(fromNo, toNo)
 
-fun getRandomDouble() = Random.nextDouble(0.0, 1000.0)
+/**Get a random double number
+ * @param fromNo starting number
+ * @param toNo ending number*/
+fun getRandomDouble(fromNo: Double = 0.0, toNo: Double = 1000.0) = Random.nextDouble(fromNo, toNo)
 
-fun getRandomString(lengthOfString :Int = 20) = (1..lengthOfString)
+/** Get a random string
+ * @param lengthOfString provide the length of the string, default is 20*/
+fun getRandomString(lengthOfString: Int = 20) = (1..lengthOfString)
     .map { Random.nextInt(0, CHARACTER_POOL.size) }
     .map(CHARACTER_POOL::get)
     .joinToString("")
 
-fun generateRandomNumber(fromNo: Int = 0, toNo: Int = 1000, noToBeGenerated: Int = 20) =
+/**Generate random list of integer, default is 20
+ * @param fromNo starting number
+ * @param toNo ending number
+ * @param noToBeGenerated total no of number to be generated.*/
+fun generateRandomNumberList(fromNo: Int = 0, toNo: Int = 1000, noToBeGenerated: Int = 20) =
     List(noToBeGenerated) { Random.nextInt(fromNo, toNo) }
 
-fun generateRandomDoubleNumber(fromNo: Double = 0.0, toNo: Double = 1000.0, noToBeGenerated: Int = 20) =
+/**Generate random list of Double, default is 20
+ * @param fromNo starting number
+ * @param toNo ending number
+ * @param noToBeGenerated total no of number to be generated.*/
+fun generateRandomDoubleNumberList(fromNo: Double = 0.0, toNo: Double = 1000.0, noToBeGenerated: Int = 20) =
     List(noToBeGenerated) { Random.nextDouble(fromNo, toNo) }
