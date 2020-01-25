@@ -18,22 +18,7 @@ Or
 ```
 
 All the methods are self explainatory, there is also a sample in it. For better understanding of the project. Some functions like,
-
-```
-toast(R.string.<yourStringId>)
-```
-Or
-```
-toast("My custom message")
-```
-
-Similarly, other functions are like, 
-logr,loge,logv,logd and many more. While going to production, if you don't want to print the logs at all, then call
-```
-Andy.disposeAlllogs(true)
-```
-
-There are tons of other functions and features, like lazy loading adapter, recycler view intialization apapter and much more. All the methods are self explainatory.
+there are tons of other functions and features, like lazy loading adapter, recycler view intialization apapter and much more. All the methods are self explainatory.
 
 
 ### The complete documentation can be found in the wiki section.
