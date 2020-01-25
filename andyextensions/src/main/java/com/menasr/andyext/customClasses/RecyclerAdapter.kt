@@ -6,16 +6,16 @@ import android.os.Handler
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class RecyclerAdapter<T, U : RecyclerView.ViewHolder>(private val recyclerView: RecyclerView) :
-    RecyclerView.Adapter<U>() {
+abstract class RecyclerAdapter<MODEL_CLASS, VH_CLASS : RecyclerView.ViewHolder>(private val recyclerView: RecyclerView) :
+    RecyclerView.Adapter<VH_CLASS>() {
 
-    private var list: MutableList<T> = ArrayList()
+    private var list: MutableList<MODEL_CLASS> = ArrayList()
 
     /**Get actual list*/
     fun getList() = list
 
     /**Every list of items added will be reflected after 1 sec*/
-    fun addItem(list: List<T>) {
+    fun addItem(list: List<MODEL_CLASS>) {
         Handler().postDelayed({
             val oldPos = list.size
             this.list.addAll(list)
@@ -25,7 +25,7 @@ abstract class RecyclerAdapter<T, U : RecyclerView.ViewHolder>(private val recyc
     }
 
     /**Remove the item from the list*/
-    fun removeItem(item : T) = removeItem(list.indexOf(item))
+    fun removeItem(item : MODEL_CLASS) = removeItem(list.indexOf(item))
 
     /**Remove the item from the list with position*/
     @Suppress("MemberVisibilityCanBePrivate")
@@ -37,7 +37,7 @@ abstract class RecyclerAdapter<T, U : RecyclerView.ViewHolder>(private val recyc
     /**Add single item to the adapter,
      * @param item to be added
      * @param position send the position to add the item, else it will be added in last*/
-    fun addItem(item: T, position: Int? = null) {
+    fun addItem(item: MODEL_CLASS, position: Int? = null) {
         Handler().postDelayed({
             val oldPos = list.size
             if (position == null) list.add(item)
@@ -49,10 +49,10 @@ abstract class RecyclerAdapter<T, U : RecyclerView.ViewHolder>(private val recyc
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = onCreateHolder(parent, viewType)
     override fun getItemCount() = list.size
-    override fun onBindViewHolder(holder: U, position: Int) = onBindHolder(holder,list[position], position)
+    override fun onBindViewHolder(holder: VH_CLASS, position: Int) = onBindHolder(holder,list[position], position)
 
 
-    abstract fun onBindHolder(holder: U, data: T, position: Int)
-    abstract fun onCreateHolder(parent: ViewGroup, viewType: Int): U
+    abstract fun onBindHolder(holder: VH_CLASS, data: MODEL_CLASS, position: Int)
+    abstract fun onCreateHolder(parent: ViewGroup, viewType: Int): VH_CLASS
 
 }
