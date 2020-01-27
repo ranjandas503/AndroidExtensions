@@ -3,7 +3,7 @@
 <b>This library is basically a collection of helper methods, which we use while building android apps.</b>
 
 
-Just add following dependency and you'r build gradle and your are good to go
+Just add following dependency and you'r build gradle and your are good to go. OR you can just copy paste the method or class.
 ```
 implementation 'com.menasr.andyext:ranjan:1.0.2'
 ```
