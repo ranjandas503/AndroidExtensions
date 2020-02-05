@@ -1,15 +1,11 @@
 package com.sample.test
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.menasr.andyext.customClasses.LazyRecyclerAdapter
-import com.menasr.andyext.extensionFunctions.visibility
-import kotlinx.android.synthetic.main.layout_sample.view.*
-import kotlinx.android.synthetic.main.lazy_progress.view.*
 
-class AdapterLazyRecycler(recyclerView: RecyclerView):
+class AdapterLazyRecycler(recyclerView: RecyclerView) :
     LazyRecyclerAdapter<CustomModel, CustomViewHolder, LazyLoadViewHolder>(recyclerView) {
 
     override fun onBindHolder(holder: CustomViewHolder, data: CustomModel, position: Int) {
@@ -42,5 +38,23 @@ class AdapterLazyRecycler(recyclerView: RecyclerView):
                 false
             )
         )
+    }
+
+    override fun onSwipeRightOrLeft(
+        data: CustomModel,
+        position: Int,
+        swipeDirection: Int
+    ): Boolean {
+        //Return true if you want to delete it
+        return false
+    }
+
+    override fun onDragFromPosition(
+        fromData: CustomModel,
+        fromPosition: Int,
+        toData: CustomModel,
+        toPosition: Int
+    ): Boolean {
+        return true
     }
 }

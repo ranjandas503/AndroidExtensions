@@ -26,4 +26,21 @@ class AdapterRecycler(recyclerView: RecyclerView):
             )
         )
     }
+
+    override fun onDragFromPosition(
+        fromData: CustomModel,
+        fromPosition: Int,
+        toData: CustomModel,
+        toPosition: Int
+    ): Boolean {
+        return true
+    }
+
+    override fun onSwipeRightOrLeft(
+        data: CustomModel,
+        position: Int,
+        swipeDirection: Int
+    ): Boolean {
+        return true
+    }
 }

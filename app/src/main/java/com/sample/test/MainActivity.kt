@@ -1,11 +1,12 @@
 package com.sample.test
 
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
 import com.menasr.andyext.constantObjects.ConstantUtils
 import com.menasr.andyext.customClasses.LazyRecyclerAdapter
-import com.menasr.andyext.extensionFunctions.*
+import com.menasr.andyext.extensionFunctions.initRecyclerViewAdapter
+import com.menasr.andyext.extensionFunctions.loge
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val adapter = AdapterLazyRecycler(recyclerView)
+        Handler().postDelayed({adapter.canSwapOrDrag(true)},4000)
         adapter.addLazyLoadCallback(object : LazyRecyclerAdapter.LazyLoadRecyclerCallback {
             override fun onLoadMore() {
                 if (count <= 20)

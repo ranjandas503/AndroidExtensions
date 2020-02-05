@@ -4,21 +4,78 @@ package com.menasr.andyext.customClasses
 
 import android.os.Handler
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.menasr.andyext.customClasses.listeners.ItemTouchHelperAdapter
+import com.menasr.andyext.customClasses.listeners.OnStartDragListener
+import com.menasr.andyext.customClasses.listeners.SimpleItemTouchHelperCallback
 import com.menasr.andyext.extensionFunctions.canClickAgain
+import java.util.*
+import kotlin.collections.ArrayList
 
 const val VIEW_TYPE_ITEM = 0
 const val VIEW_TYPE_LOADING = 1
 
 abstract class LazyRecyclerAdapter<MODEL_CLASS, DATA_VH_CLASS : RecyclerView.ViewHolder, LAZYLOAD_VH_CLASS : RecyclerView.ViewHolder>(
     private val recyclerView: RecyclerView
-) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>(), ItemTouchHelperAdapter, OnStartDragListener {
 
     private var list: MutableList<MODEL_CLASS> = ArrayList()
     private var progressVisibility = false
     private var canLoadAgain: Boolean = true
     private var listener: LazyLoadRecyclerCallback? = null
+
+    private var mItemTouchHelper: ItemTouchHelper? = null
+    private var cursorPosition: Int = 0
+
+    init {
+        canSwapOrDrag(false)
+    }
+
+    private fun setSwipeListener() {
+        val callback = SimpleItemTouchHelperCallback(this)
+        mItemTouchHelper = ItemTouchHelper(callback)
+        mItemTouchHelper?.attachToRecyclerView(recyclerView)
+    }
+
+    fun canSwapOrDrag(isSwappable: Boolean) {
+        if (isSwappable)
+            setSwipeListener()
+        else {
+            mItemTouchHelper = null
+            cursorPosition = 0
+        }
+    }
+
+    override fun onItemDrag(fromPosition: Int, toPosition: Int): Boolean {
+        //changing cursor position on dragging
+        cursorPosition = toPosition
+
+        //Do something on dragging two items
+        return if (onDragFromPosition(
+                list[fromPosition],
+                fromPosition,
+                list[toPosition],
+                toPosition
+            )
+        ) {
+            //swapping item
+            Collections.swap(list, fromPosition, toPosition)
+            notifyItemMoved(fromPosition, toPosition)
+            true
+        } else false
+    }
+
+    override fun onItemDismiss(position: Int, swipeDirection: Int) {
+        if (onSwipeRightOrLeft(list[position], position, swipeDirection)) {
+            list.removeAt(position)
+            notifyItemRemoved(position)
+        } else notifyItemChanged(position)
+    }
+
+    override fun onStartDrag(viewHolder: RecyclerView.ViewHolder) {
+        mItemTouchHelper?.startDrag(viewHolder)
+    }
 
     /**Get actual list*/
     fun getList() = list
@@ -62,11 +119,11 @@ abstract class LazyRecyclerAdapter<MODEL_CLASS, DATA_VH_CLASS : RecyclerView.Vie
     }
 
     /**Remove the item from the list*/
-    fun removeItem(item : MODEL_CLASS) = removeItem(list.indexOf(item))
+    fun removeItem(item: MODEL_CLASS) = removeItem(list.indexOf(item))
 
     /**Remove the item from the list with position*/
     @Suppress("MemberVisibilityCanBePrivate")
-    fun removeItem(position: Int){
+    fun removeItem(position: Int) {
         list.removeAt(position)
         notifyItemRemoved(position)
     }
@@ -110,6 +167,18 @@ abstract class LazyRecyclerAdapter<MODEL_CLASS, DATA_VH_CLASS : RecyclerView.Vie
     abstract fun onBindLazyLoadHolder(holder: LAZYLOAD_VH_CLASS, visibility: Boolean, position: Int)
     abstract fun addLayoutForParsing(parent: ViewGroup, viewType: Int): DATA_VH_CLASS
     abstract fun addLazyLoadingLayoutParsing(parent: ViewGroup, viewType: Int): LAZYLOAD_VH_CLASS
+
+    /**Return true if  you want to delete the data in left or right swipe else return false.
+     * Check swipe direction as [ItemTouchHelper] is used for touch detection*/
+    abstract fun onSwipeRightOrLeft(data: MODEL_CLASS, position: Int, swipeDirection: Int): Boolean
+
+    /**Return true if  you want to swap the position else return false*/
+    abstract fun onDragFromPosition(
+        fromData: MODEL_CLASS,
+        fromPosition: Int,
+        toData: MODEL_CLASS,
+        toPosition: Int
+    ): Boolean
 
     /**Responsible for lazy loading in recycler view items
      * #onLoadMore will be invoked when user scrolls to end,
