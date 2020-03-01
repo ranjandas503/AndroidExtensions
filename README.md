@@ -5,14 +5,14 @@
 
 Just add following dependency and you'r build gradle and your are good to go. Or you can just copy paste the method or class.
 ```
-implementation 'com.menasr.andyext:ranjan:1.0.3'
+implementation 'com.menasr.andyext:ranjan:1.0.4'
 ```
 Or
 ```
 <dependency>
   <groupId>com.menasr.andyext</groupId>
   <artifactId>ranjan</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
   <type>pom</type>
 </dependency>
 ```
