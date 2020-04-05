@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 abstract class CustomRecyclerAdapter<MODEL_CLASS, VH_CLASS : RecyclerView.ViewHolder> :
     RecyclerView.Adapter<VH_CLASS>() {
 
-    private var list: MutableList<MODEL_CLASS> = ArrayList()
+    private var list: ArrayList<MODEL_CLASS> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH_CLASS =
         onCreateHolder(parent, viewType)
@@ -19,7 +19,7 @@ abstract class CustomRecyclerAdapter<MODEL_CLASS, VH_CLASS : RecyclerView.ViewHo
     override fun onBindViewHolder(holder: VH_CLASS, position: Int) =
         onBindHolder(holder, list[position], position)
 
-    fun addItems(list: MutableList<MODEL_CLASS>) {
+    fun addItems(list: ArrayList<MODEL_CLASS>) {
         this.list = list
         notifyDataSetChanged()
     }
