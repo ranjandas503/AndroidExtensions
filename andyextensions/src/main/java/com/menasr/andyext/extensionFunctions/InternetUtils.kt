@@ -16,7 +16,7 @@ import com.menasr.andyext.AndyExtApp
 /**
  * @return Connectivity Manager Object
  */
-fun getConnectivityManager(context: Context = AndyExtApp.appCtx): ConnectivityManager? {
+fun getConnectivityManager(context: Context = AndyExtApp.applicationContext): ConnectivityManager? {
     return context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 }
 
@@ -32,7 +32,7 @@ fun getConnectivityManager(context: Context = AndyExtApp.appCtx): ConnectivityMa
 @RequiresPermission(allOf = [ACCESS_WIFI_STATE, INTERNET, ACCESS_NETWORK_STATE])
 fun isNetworkConnected(): Boolean {
     val connectivityManager =
-        AndyExtApp.appCtx.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        AndyExtApp.applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
     //Build.VERSION_CODES.M is Marshmallow(VERSION 23)
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
@@ -62,7 +62,7 @@ fun isNetworkConnected(): Boolean {
  */
 fun getNetworkType(): String? {
     val mTelephonyManager =
-        AndyExtApp.appCtx.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+        AndyExtApp.applicationContext.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
     return when (mTelephonyManager.networkType) {
         TelephonyManager.NETWORK_TYPE_GPRS,
         TelephonyManager.NETWORK_TYPE_EDGE,
@@ -86,7 +86,7 @@ fun getNetworkType(): String? {
 /**Check weather phone is in roaming or not*/
 fun checkForRoaming(): Boolean {
     var isRoaming = false
-    val telephonyManager = AndyExtApp.appCtx.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+    val telephonyManager = AndyExtApp.applicationContext.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
 
     object : PhoneStateListener() {
         override fun onServiceStateChanged(serviceState: ServiceState) {

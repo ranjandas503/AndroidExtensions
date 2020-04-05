@@ -12,7 +12,7 @@ import com.menasr.andyext.customClasses.listeners.SimpleItemTouchHelperCallback
 import java.util.*
 import kotlin.collections.ArrayList
 
-abstract class RecyclerAdapter<MODEL_CLASS, VH_CLASS : RecyclerView.ViewHolder>(private val recyclerView: RecyclerView) :
+abstract class SwappableRecyclerAdapter<MODEL_CLASS, VH_CLASS : RecyclerView.ViewHolder>(private val recyclerView: RecyclerView) :
     RecyclerView.Adapter<VH_CLASS>(), ItemTouchHelperAdapter, OnStartDragListener {
 
     private var list: MutableList<MODEL_CLASS> = ArrayList()

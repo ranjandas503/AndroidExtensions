@@ -9,7 +9,7 @@ internal class AndyExtApp : Application() {
     companion object {
         //application context for dependencies in the application
         @SuppressLint("StaticFieldLeak")
-        internal lateinit var appCtx: Context
+        lateinit var applicationContext: Context
 
         //log is printed on the basis of this boolean value
         internal var isLogDisposable = false
@@ -20,6 +20,6 @@ internal class AndyExtApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        appCtx = applicationContext
+        AndyExtApp.applicationContext = applicationContext
     }
 }

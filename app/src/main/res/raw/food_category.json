@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "food_category": "Mixed"
+  },
+  {
+    "id": 2,
+    "food_category": "Fast Food"
+  },
+  {
+    "id": 3,
+    "food_category": "Veg"
+  },
+  {
+    "id": 4,
+    "food_category": "Non Veg"
+  },
+  {
+    "id": 5,
+    "food_category": "Traditional"
+  },
+  {
+    "id": 6,
+    "food_category": "Snacks"
+  },
+  {
+    "id": 7,
+    "food_category": "Hot Drinks"
+  },
+  {
+    "id": 8,
+    "food_category": "Cold Drinks"
+  },
+  {
+    "id": 9,
+    "food_category": "Sweets"
+  },
+  {
+    "id": 10,
+    "food_category": "Ice Creams"
+  },
+  {
+    "id": 11,
+    "food_category": "Liquor"
+  }
+]

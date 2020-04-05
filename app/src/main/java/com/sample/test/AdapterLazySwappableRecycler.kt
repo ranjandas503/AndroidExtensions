@@ -3,10 +3,10 @@ package com.sample.test
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.menasr.andyext.customClasses.LazyRecyclerAdapter
+import com.menasr.andyext.customClasses.LazySwappableRecyclerAdapter
 
-class AdapterLazyRecycler(recyclerView: RecyclerView) :
-    LazyRecyclerAdapter<CustomModel, CustomViewHolder, LazyLoadViewHolder>(recyclerView) {
+class AdapterLazySwappableRecycler(recyclerView: RecyclerView) :
+    LazySwappableRecyclerAdapter<CustomModel, CustomViewHolder, LazyLoadViewHolder>(recyclerView) {
 
     override fun onBindHolder(holder: CustomViewHolder, data: CustomModel, position: Int) {
         holder.bindViews(data)

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.menasr.andyext.constantObjects.ConstantUtils
-import com.menasr.andyext.customClasses.LazyRecyclerAdapter
+import com.menasr.andyext.customClasses.LazySwappableRecyclerAdapter
 import com.menasr.andyext.extensionFunctions.initRecyclerViewAdapter
 import com.menasr.andyext.extensionFunctions.loge
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,9 +20,9 @@ class MainActivity : AppCompatActivity() {
         loge(ConstantUtils.CHARACTER_POOL)
 
 
-        val adapter = AdapterLazyRecycler(recyclerView)
+        val adapter = AdapterLazySwappableRecycler(recyclerView)
         Handler().postDelayed({adapter.canSwapOrDrag(true)},4000)
-        adapter.addLazyLoadCallback(object : LazyRecyclerAdapter.LazyLoadRecyclerCallback {
+        adapter.addLazyLoadCallback(object : LazySwappableRecyclerAdapter.LazyLoadRecyclerCallback {
             override fun onLoadMore() {
                 if (count <= 20)
                     adapter.addItem(generateMoreItems(5))

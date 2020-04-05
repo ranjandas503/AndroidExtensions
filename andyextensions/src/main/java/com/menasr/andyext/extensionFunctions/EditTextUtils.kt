@@ -10,7 +10,7 @@ import android.widget.EditText
 /**
  * @param et pass editText to check if it is empty or not
  */
-fun EditText.isEmpty(et: EditText): Boolean = et.text.toString().trim { it <= ' ' }.isNotEmpty()
+fun EditText.isEmpty(): Boolean = text.toString().trim { it <= ' ' }.isNotEmpty()
 
 fun EditText.hideKeyboard() {
     val imm: InputMethodManager? =
@@ -24,3 +24,9 @@ fun EditText.showKeyboard() {
         imm?.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
     }
 }
+
+/**This function returns text in EditText*/
+fun EditText.textString() = text.toString()
+
+/**Get text by removing space in it*/
+fun EditText.trimmedText() = text.toString().replace(" ","")

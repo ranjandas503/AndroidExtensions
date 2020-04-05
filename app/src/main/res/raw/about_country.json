@@ -1,0 +1,199 @@
+[
+  {
+    "id": 1,
+    "countryName": "India",
+    "aboutCountry": "India is a federal constitutional republic governed under a parliamentary system consisting of 29 states and 7 union territories. Every state has it’s own staple food. Each one is interesting which comes with their own regional spices.",
+    "states": [
+      {
+        "id": 0,
+        "isUnionTerritory": false,
+        "name": "All regions of India"
+      },
+      {
+        "id": 1,
+        "isUnionTerritory": false,
+        "name": "Andhra Pradesh"
+      },
+      {
+        "id": 2,
+        "isUnionTerritory": false,
+        "name": "Arunachal Pradesh"
+      },
+      {
+        "id": 3,
+        "isUnionTerritory": false,
+        "name": "Assam"
+      },
+      {
+        "id": 4,
+        "isUnionTerritory": false,
+        "name": "Bihar"
+      },
+      {
+        "id": 5,
+        "isUnionTerritory": false,
+        "name": "Chhattisgarh"
+      },
+      {
+        "id": 6,
+        "isUnionTerritory": false,
+        "name": "Goa"
+      },
+      {
+        "id": 7,
+        "isUnionTerritory": false,
+        "name": "Gujarat"
+      },
+      {
+        "id": 8,
+        "isUnionTerritory": false,
+        "name": "Haryana"
+      },
+      {
+        "id": 9,
+        "isUnionTerritory": false,
+        "name": "Himachal Pradesh"
+      },
+      {
+        "id": 10,
+        "isUnionTerritory": false,
+        "name": "Jharkhand"
+      },
+      {
+        "id": 11,
+        "isUnionTerritory": false,
+        "name": "Karnataka"
+      },
+      {
+        "id": 12,
+        "isUnionTerritory": false,
+        "name": "Kerala"
+      },
+      {
+        "id": 13,
+        "isUnionTerritory": false,
+        "name": "Madhya Pradesh"
+      },
+      {
+        "id": 14,
+        "isUnionTerritory": false,
+        "name": "Maharashtra"
+      },
+      {
+        "id": 15,
+        "isUnionTerritory": false,
+        "name": "Manipur"
+      },
+      {
+        "id": 16,
+        "isUnionTerritory": false,
+        "name": "Meghalaya"
+      },
+      {
+        "id": 17,
+        "isUnionTerritory": false,
+        "name": "Mizoram"
+      },
+      {
+        "id": 18,
+        "isUnionTerritory": false,
+        "name": "Nagaland"
+      },
+      {
+        "id": 19,
+        "isUnionTerritory": false,
+        "name": "Odisha"
+      },
+      {
+        "id": 20,
+        "isUnionTerritory": false,
+        "name": "Punjab"
+      },
+      {
+        "id": 21,
+        "isUnionTerritory": false,
+        "name": "Rajasthan"
+      },
+      {
+        "id": 22,
+        "isUnionTerritory": false,
+        "name": "Sikkim"
+      },
+      {
+        "id": 23,
+        "isUnionTerritory": false,
+        "name": "Tamil Nadu"
+      },
+      {
+        "id": 24,
+        "isUnionTerritory": false,
+        "name": "Telangana"
+      },
+      {
+        "id": 25,
+        "isUnionTerritory": false,
+        "name": "Tripura"
+      },
+      {
+        "id": 26,
+        "isUnionTerritory": false,
+        "name": "Uttar Pradesh"
+      },
+      {
+        "id": 27,
+        "isUnionTerritory": false,
+        "name": "Uttarakhand"
+      },
+      {
+        "id": 28,
+        "isUnionTerritory": false,
+        "name": "West Bengal"
+      },
+      {
+        "id": 29,
+        "isUnionTerritory": true,
+        "name": "Andaman and Nicobar Islands"
+      },
+      {
+        "id": 30,
+        "isUnionTerritory": true,
+        "name": "Chandigarh"
+      },
+      {
+        "id": 31,
+        "isUnionTerritory": true,
+        "name": "Chandigarh"
+      },
+      {
+        "id": 32,
+        "isUnionTerritory": true,
+        "name": "Dadra and Nagar Haveli and Daman and Diu"
+      },
+      {
+        "id": 33,
+        "isUnionTerritory": true,
+        "name": "Delhi"
+      },
+      {
+        "id": 34,
+        "isUnionTerritory": true,
+        "name": "Jammu and Kashmir"
+      },
+      {
+        "id": 35,
+        "isUnionTerritory": true,
+        "name": "Ladakh"
+      },
+      {
+        "id": 36,
+        "isUnionTerritory": true,
+        "name": "Lakshadweep"
+      },
+      {
+        "id": 37,
+        "isUnionTerritory": true,
+        "name": "Puducherry"
+      }
+    ]
+  }
+]

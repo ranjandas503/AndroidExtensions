@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "food_type": "Spicy"
+  },
+  {
+    "id": 2,
+    "food_type": "Oily"
+  },
+  {
+    "id": 3,
+    "food_type": "Bitter"
+  },
+  {
+    "id": 4,
+    "food_type": "Sweet"
+  },
+  {
+    "id": 5,
+    "food_type": "Sour"
+  },
+  {
+    "id": 6,
+    "food_type": "Creamy"
+  },
+  {
+    "id": 7,
+    "food_type": "Tangy(Chatpata)"
+  },
+  {
+    "id": 8,
+    "food_type": "Street Food"
+  },
+  {
+    "id": 9,
+    "food_type": "Cheesy"
+  },
+  {
+    "id": 10,
+    "food_type": "Curried"
+  },
+  {
+    "id": 11,
+    "food_type": "Bread"
+  },
+  {
+    "id": 12,
+    "food_type": "Hot Drinks"
+  },
+  {
+    "id": 13,
+    "food_type": "Cold Drinks"
+  },
+  {
+    "id": 14,
+    "food_type": "Soup"
+  }
+]
