@@ -18,10 +18,11 @@ import com.menasr.andyext.customClasses.ParametrizedFactory
  * @return YourViewModelClass
  *
  * You call call [initViewModel] for a more cleaner approach*/
-inline fun <VM : ViewModel> viewModelFactory(crossinline f: () -> VM) = object : ViewModelProvider.Factory {
-    @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(aClass: Class<T>): T = f() as T
-}
+inline fun <VM : ViewModel> viewModelFactory(crossinline f: () -> VM) =
+    object : ViewModelProvider.Factory {
+        @Suppress("UNCHECKED_CAST")
+        override fun <T : ViewModel> create(aClass: Class<T>): T = f() as T
+    }
 
 //-----------------------------------------------------------------------------------------------------------------------------------
 
@@ -36,12 +37,16 @@ fun <V : ViewModel> Fragment.initViewModel(constructorObject: Any, viewModelClas
  * for ex: <b>initViewModel(YourViewModelClass(constructorObject), YourViewModelClass::class.java)</b>
  *
  * return your provided view model class*/
-fun <V : ViewModel> Fragment.initViewModel(constructorObject: V, viewModelClass: Class<V>): V = ViewModelProvider(this, viewModelFactory { constructorObject }).get(viewModelClass)
+fun <V : ViewModel> Fragment.initViewModel(constructorObject: V, viewModelClass: Class<V>): V =
+    ViewModelProvider(this, viewModelFactory { constructorObject }).get(viewModelClass)
 
 /**initialize your viewModel with single argument and viewModelClass
  * @param constructorObject your object which you want to pass to your ViewModel Class
  * @param viewModelClass your view model class, like <ViewModelClass>::class.java*/
-fun <V : ViewModel> FragmentActivity.initViewModel(constructorObject: Any, viewModelClass: Class<V>): V {
+fun <V : ViewModel> FragmentActivity.initViewModel(
+    constructorObject: Any,
+    viewModelClass: Class<V>
+): V {
     return ViewModelProvider(this, ParametrizedFactory(constructorObject)).get(viewModelClass)
 }
 
@@ -49,12 +54,18 @@ fun <V : ViewModel> FragmentActivity.initViewModel(constructorObject: Any, viewM
  * for ex: <b>initViewModel(YourViewModelClass(constructorObject), EditSeriesViewModel::class.java)</b>
  *
  * return your provided view model class*/
-fun <V : ViewModel> FragmentActivity.initViewModel(constructorObject: V, viewModelClass: Class<V>): V = ViewModelProvider(this, viewModelFactory { constructorObject }).get(viewModelClass)
+fun <V : ViewModel> FragmentActivity.initViewModel(
+    constructorObject: V,
+    viewModelClass: Class<V>
+): V = ViewModelProvider(this, viewModelFactory { constructorObject }).get(viewModelClass)
 
 /**initialize your viewModel with single argument and viewModelClass
  * @param constructorObject your object which you want to pass to your ViewModel Class
  * @param viewModelClass your view model class, like <ViewModelClass>::class.java*/
-fun <V : ViewModel> AppCompatActivity.initViewModel(constructorObject: Any, viewModelClass: Class<V>): V {
+fun <V : ViewModel> AppCompatActivity.initViewModel(
+    constructorObject: Any,
+    viewModelClass: Class<V>
+): V {
     return ViewModelProvider(this, ParametrizedFactory(constructorObject)).get(viewModelClass)
 }
 
@@ -62,12 +73,18 @@ fun <V : ViewModel> AppCompatActivity.initViewModel(constructorObject: Any, view
  * for ex: <b>initViewModel(YourViewModelClass(constructorObject), EditSeriesViewModel::class.java)</b>
  *
  * return your provided view model class*/
-fun <V : ViewModel> AppCompatActivity.initViewModel(constructorObject: V, viewModelClass: Class<V>): V = ViewModelProvider(this, viewModelFactory { constructorObject }).get(viewModelClass)
+fun <V : ViewModel> AppCompatActivity.initViewModel(
+    constructorObject: V,
+    viewModelClass: Class<V>
+): V = ViewModelProvider(this, viewModelFactory { constructorObject }).get(viewModelClass)
 
 /**initialize your viewModel with single argument and viewModelClass
  * @param constructorObject your object which you want to pass to your ViewModel Class
  * @param viewModelClass your view model class, like <ViewModelClass>::class.java*/
-fun <V : ViewModel> DialogFragment.initViewModel(constructorObject: Any, viewModelClass: Class<V>): V {
+fun <V : ViewModel> DialogFragment.initViewModel(
+    constructorObject: Any,
+    viewModelClass: Class<V>
+): V {
     return ViewModelProvider(this, ParametrizedFactory(constructorObject)).get(viewModelClass)
 }
 
@@ -75,39 +92,56 @@ fun <V : ViewModel> DialogFragment.initViewModel(constructorObject: Any, viewMod
  * for ex: <b>initViewModel(YourViewModelClass(constructorObject), EditSeriesViewModel::class.java)</b>
  *
  * return your provided view model class*/
-fun <V : ViewModel> DialogFragment.initViewModel(constructorObject: V, viewModelClass: Class<V>): V = ViewModelProvider(this, viewModelFactory { constructorObject }).get(viewModelClass)
+fun <V : ViewModel> DialogFragment.initViewModel(
+    constructorObject: V,
+    viewModelClass: Class<V>
+): V = ViewModelProvider(this, viewModelFactory { constructorObject }).get(viewModelClass)
 
 //--------------------------------------------------------------------------------------------------------------------------------------------
 
 /**initialize your viewModel with multiple argument and viewModelClass
  * @param constructorObject your object which you want to pass to your ViewModel Class
  * @param viewModelClass your view model class, like <ViewModelClass>::class.java*/
-fun <V : ViewModel> DialogFragment.initViewModel(constructorObject: Array<out Any>, viewModelClass: Class<V>): V {
-    return ViewModelProvider(this, MultipleParametrizedFactory(constructorObject)).get(viewModelClass)
+fun <V : ViewModel> DialogFragment.initViewModel(
+    constructorObject: Array<out Any>,
+    viewModelClass: Class<V>
+): V {
+    return ViewModelProvider(this, MultipleParametrizedFactory(constructorObject)).get(
+        viewModelClass
+    )
 }
 
 /**initialize your viewModel with multiple argument and viewModelClass
  * @param constructorObject your object which you want to pass to your ViewModel Class
  * @param viewModelClass your view model class, like <ViewModelClass>::class.java*/
-fun <V : ViewModel> Fragment.initViewModel(constructorObject: Array<out Any>, viewModelClass: Class<V>): V {
+fun <V : ViewModel> Fragment.initViewModel(
+    constructorObject: Array<out Any>,
+    viewModelClass: Class<V>
+): V {
     return ViewModelProvider(this, MultipleParametrizedFactory(constructorObject))
-            .get(viewModelClass)
+        .get(viewModelClass)
 }
 
 /**initialize your viewModel with multiple argument and viewModelClass
  * @param constructorObject your object which you want to pass to your ViewModel Class
  * @param viewModelClass your view model class, like <ViewModelClass>::class.java*/
-fun <V : ViewModel> FragmentActivity.initViewModel(constructorObject: Array<out Any>, viewModelClass: Class<V>): V {
+fun <V : ViewModel> FragmentActivity.initViewModel(
+    constructorObject: Array<out Any>,
+    viewModelClass: Class<V>
+): V {
     return ViewModelProvider(this, MultipleParametrizedFactory(constructorObject))
-            .get(viewModelClass)
+        .get(viewModelClass)
 }
 
 /**initialize your viewModel with multiple argument and viewModelClass
  * @param constructorObject your object which you want to pass to your ViewModel Class
  * @param viewModelClass your view model class, like <ViewModelClass>::class.java*/
-fun <V : ViewModel> AppCompatActivity.initViewModel(constructorObject: Array<out Any>, viewModelClass: Class<V>): V {
+fun <V : ViewModel> AppCompatActivity.initViewModel(
+    constructorObject: Array<out Any>,
+    viewModelClass: Class<V>
+): V {
     return ViewModelProvider(this, MultipleParametrizedFactory(constructorObject))
-            .get(viewModelClass)
+        .get(viewModelClass)
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------
