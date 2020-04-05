@@ -97,19 +97,19 @@ fun dimen(@DimenRes dimenId: Int, context: Context = appCtx) =
  * @param dimenIntId pass the dimenId id like R.dimen.<id of dimenIntID>
  * @param context context is not required, but in case of theme changes Context is required
  * */
-fun dimenInteger(@IntegerRes dimenIntId: Int, context: Context = appCtx) =
+fun integerRes(@IntegerRes dimenIntId: Int, context: Context = appCtx) =
     context.resources.getInteger(dimenIntId)
 
 /**Get dimen int array value in android.
  * @param dimenArrayIntId pass the dimen int array id like R.dimen.<id of dimenArrayIntID>
  * @param context context is not required, but in case of theme changes Context is required
  * */
-fun dimenIntArray(@ArrayRes dimenArrayIntId: Int, context: Context = appCtx) =
+fun intArray(@ArrayRes dimenArrayIntId: Int, context: Context = appCtx) =
     context.resources.getIntArray(dimenArrayIntId)
 
 /**Get dimen string array value in android.
  * @param dimenArrayStringId pass the dimen string array like R.dimen.<id of dimenStringArrayID>
  * @param context context is not required, but in case of theme changes Context is required
  * */
-fun dimenStringArray(@ArrayRes dimenArrayStringId: Int, context: Context = appCtx): Array<String> =
+fun stringArray(@ArrayRes dimenArrayStringId: Int, context: Context = appCtx): Array<String> =
     context.resources.getStringArray(dimenArrayStringId)

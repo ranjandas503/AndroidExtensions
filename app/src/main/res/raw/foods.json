@@ -1,0 +1,922 @@
+[
+  {
+    "id": 1,
+    "name": "Kachaloo Chatt",
+    "description": "Spiced up taro roots, when prepared with potatoes or aloo, called aloo kachaloo chaat",
+    "tasteLike": "This sumptuous snack offers a combined taste of lemon, red Chilli flakes, black-eyed beans, and tamarind in the best way possible. Tangy and spicy to its core, this is a must for you.",
+    "imageUrl": [],
+    "ingredients": [
+      "Potatoes",
+      "Red Chilli Flakes",
+      "Black Eyed Beans",
+      "Tamarind"
+    ],
+    "servedWith": [
+      "Onions"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      2,
+      3
+    ],
+    "foodType": [
+      8,
+      7,
+      1,
+      4,
+      5
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Kaladi Kulcha",
+    "description": "Kaladi is a traditional ripened cheese product indigenous to Udhampur, Jammu province of Jammu and Kashmir state of India.It is a very dense cheese that is usually sautéd in its own fat and salted while serving. Kaladi’s are usually made from cow’s or buffalo’s milk, though kaladi’s made from goat’s milk are also available, and have a color.Traditionally Kaladi’s are made from raw (uncooked) full fat milk that is separated using soured milk. The solidified part is paced in doonas (small bowls made of leaves) and sun dried. The excess liquid drips down from the semi-porous doonas and rest of the moisture is lost by sun drying.As the ambient temperature is low and the sun is strong in the mountains, the Kaladi becomes dry from outside yet retains moisture from inside. Some times fungus grows on this and gives it a unique flavor.",
+    "tasteLike": "The spongy blob creates a heavenly taste when associated with condiments or chutney, like Chilli or garlic chutney.",
+    "imageUrl": [],
+    "ingredients": [
+      "Kalari Cheese",
+      "Bread",
+      "Butter",
+      "Spices"
+    ],
+    "servedWith": [
+      "Chutney",
+      "Sauce"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      5,
+      3,
+      4,
+      6
+    ],
+    "foodType": [
+      8,
+      9,
+      1,
+      2,
+      3
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Rajma Chawal",
+    "description": "Curried red beans/rajma served with rice/jeera rice. The red beans are little sweetened. This is common dish easy available and locals love to eat it.",
+    "tasteLike": "The taste is completely depends on curry. But definitely taste the delicate flavour of used spices and aroma of green onions.",
+    "imageUrl": [],
+    "ingredients": [
+      "Rajma/Kidney Beans",
+      "Rice",
+      "Onion",
+      "Coriander powder",
+      "Ginger",
+      "Cinnamon",
+      "Oil",
+      "Tomato",
+      "Garlic",
+      "Chilli",
+      "Black pepper",
+      "Ghee",
+      "Cloves"
+    ],
+    "servedWith": [
+      "Salad"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      3
+    ],
+    "foodType": [
+      10
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Khatta Meat",
+    "description": "Khatta Meat/Yakhni is a famous lamb curry dish from Jammu. It is made with mutton cooked in amchur (Dry Mango Powder) or anardana (Sour Pomegranate Seeds) and flavoured with fumes of a burning charcoal soaked in mustard oil. This mutton curry is amazingly tasty and easy to digest.",
+    "tasteLike": "As the name suggests, Khatta refers to the distinct sour taste that this meat curry boasts of, particularly due to the presence of 'aamchoor' (dry mango powder) used in it. Khatta meat is a mouth-watering combination of spicy and sour, which gives this mutton curry a unique flavour.",
+    "imageUrl": [],
+    "ingredients": [
+      "Mutton",
+      "Onion",
+      "Ginger",
+      "Garlic",
+      "Turmeric",
+      "Kasoori Methi",
+      "Red Chilli",
+      "Green Chilli",
+      "Salt",
+      "Aamchur",
+      "Fennel Seeds",
+      "Fresh Coriander Leafs",
+      "Charcoal for smoky flavour",
+      "Cumin",
+      "Coriander",
+      "Cinnamon",
+      "Oil"
+    ],
+    "servedWith": [
+      "Chapati",
+      "Rice",
+      "Naan",
+      "Tandoori Roti"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      4,
+      5
+    ],
+    "foodType": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Patisa",
+    "description": "A tasty sweet which is also known as Son Papri/Sohan Papdi.",
+    "tasteLike": "Soft and smooth like white milky chocolate and has a rich texture of milk cream with dry fruits on top",
+    "imageUrl": [],
+    "ingredients": [
+      "Gram Flour",
+      "Sugar",
+      "Flour",
+      "Ghee",
+      "Milk",
+      "Cardamom"
+    ],
+    "servedWith": [],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      9
+    ],
+    "foodType": [
+      4
+    ],
+    "placesFoundIn": [
+      0
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Dum Aloo",
+    "description": "Dum aloo is one of the classic Indian dishes served in a special meals like weddings, celebrations or festivals . Dum translates to steam cooked & aloo to potatoes. So dum aloo translates to potatoes that are steam cooked.",
+    "tasteLike": "It has all the rich flavours of spices which is blended with spices and herbs in thick spicy gravy.",
+    "imageUrl": [],
+    "ingredients": [
+      "Potatoes",
+      "Onion",
+      "Cardamom",
+      "Red Chilli",
+      "Green Chilli",
+      "Cumin",
+      "Turmeric",
+      "Ghee",
+      "Salt",
+      "Ginger",
+      "Garlic",
+      "Bay leafs",
+      "Tomatoes",
+      "Mustard Oil",
+      "Black Pepper"
+    ],
+    "servedWith": [],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      3,
+      5
+    ],
+    "foodType": [
+      1,
+      2,
+      10
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Kashmiri Polao",
+    "description": "It is a delicious rice rice meal, where rice is cooked in milk and is loaded with dry fruits and fruits. Saffron is added to it too which gives a very nice fragrance to this pulao. I have also mentioned a traditional Kashmiri Pulao recipe in the post where the rice is cooked with mutton stock and spices. Here is how to make Restaurant style Kashmiri Pulao Recipe (Step by Step).",
+    "tasteLike": "Kashmiri Pulao is aromatic, mild and faintly sweet in taste.",
+    "imageUrl": [],
+    "ingredients": [
+      "Ghee",
+      "Jeera",
+      "Cardamom",
+      "Dry fruits",
+      "Paneer/Chicken/Mutton",
+      "Onion",
+      "Basmati Rice",
+      "Saffron",
+      "Oil"
+    ],
+    "servedWith": [
+      "Curry Based Dishes",
+      "Raita"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      3,
+      4,
+      5
+    ],
+    "foodType": [
+      1
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Seekh Kebab",
+    "description": "Smoky juicy chicken/mutton with several mouth watering flavours. Contains lots of unique spices and preparations.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [
+      "Chicken/Mutton",
+      "Cardamom",
+      "Cloves",
+      "Coriander",
+      "Cloves",
+      "Onion",
+      "Chilli",
+      "Garlic",
+      "Ginger",
+      "Bay leaf"
+    ],
+    "servedWith": [
+      "Onion",
+      "Raita",
+      "Green Chutney",
+      "Tomato/Chilli Sauce"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      4,
+      2
+    ],
+    "foodType": [
+      1,
+      8
+    ],
+    "placesFoundIn": [
+      0
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Rogan Juice ",
+    "description": "Mutton cooked with several spices which gives it a quite unique curried flavour.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [
+      "Mutton",
+      "Onion",
+      "Garam masala",
+      "Ginger",
+      "Garlic",
+      "Oil",
+      "Coriander"
+    ],
+    "servedWith": [
+      "Rice",
+      "Chapati"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      {
+        "id": 4,
+        "food_category": "Non Veg"
+      },
+      {
+        "id": 5,
+        "food_category": "Traditional"
+      }
+    ],
+    "foodType": [
+      {
+        "id": 1,
+        "food_type": "Spicy"
+      },
+      {
+        "id": 2,
+        "food_type": "Oily"
+      },
+      {
+        "id": 10,
+        "food_type": "Curried"
+      }
+    ],
+    "placesFoundIn": [
+      0
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Nadru Yakhni",
+    "description": "Nadru Yakhni is a famous kashmiri curry which finds its basis on yogurt along with lotus stems and some aromatic spices.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [
+      "Lotus Stem",
+      "Onion",
+      "Garam masala",
+      "Ginger",
+      "Garlic",
+      "Oil",
+      "Coriander",
+      "Yogurt"
+    ],
+    "servedWith": [
+      "Chapati",
+      "Meat"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      {
+        "id": 5,
+        "food_category": "Traditional"
+      },
+      {
+        "id": 3,
+        "food_category": "Veg"
+      }
+    ],
+    "foodType": [
+      {
+        "id": 1,
+        "food_type": "Spicy"
+      },
+      {
+        "id": 2,
+        "food_type": "Oily"
+      },
+      {
+        "id": 10,
+        "food_type": "Curried"
+      }
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Kashmiri Muji Gaad",
+    "description": "Served on festivals and occasions, Kashmiri gaad is a dish made up of fish prepared generally with radish or nadur. This dish is an amalgamation of vegetarian and non-vegetarian items as the taste of fish and lotus stem blend together to give it a unique taste while hot spices and herbs add to it's unique yet amazing flavour and aroma. This dish is usually served in/during festivals like ?Gaada Bata? in the month of December.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [
+      "Fish",
+      "Lotus Stem",
+      "Onion",
+      "Garam masala",
+      "Ginger",
+      "Garlic",
+      "Oil",
+      "Coriander"
+    ],
+    "servedWith": [
+      "Rice",
+      "Chapati"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      {
+        "id": 4,
+        "food_category": "Non Veg"
+      },
+      {
+        "id": 5,
+        "food_category": "Traditional"
+      }
+    ],
+    "foodType": [
+      {
+        "id": 1,
+        "food_type": "Spicy"
+      },
+      {
+        "id": 2,
+        "food_type": "Oily"
+      },
+      {
+        "id": 10,
+        "food_type": "Curried"
+      }
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Aab Gosht",
+    "description": "Aab Gosht can be made in two ways either Kashmiri or Iranian. The Kashmiri dish is made using milk and several spices including cardamom and black pepper.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [
+      "Mutton",
+      "Ginger",
+      "Garlic",
+      "Oil",
+      "Cardamom",
+      "Black Pepper"
+    ],
+    "servedWith": [
+      "Rice",
+      "Chapati"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      4,
+      5
+    ],
+    "foodType": [
+      1,
+      10
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Goshtaba",
+    "description": "Goshatba is minced mutton cooked in flavorful yogurt gravy and spices. This dish is prepared on royal occasions and it indeed has a royal taste and flavour which can tease you appetite to urge for more. Hence it is popularly known as a ?dish for the Kings?.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [
+      "Minced Meat",
+      "Milk",
+      "Curd",
+      "Saffron",
+      "Ginger",
+      "Garlic",
+      "Chillis"
+    ],
+    "servedWith": [],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      4,
+      5
+    ],
+    "foodType": [
+      1,
+      5,
+      10
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Lyodur Tschaman",
+    "description": "A top favourite among Kashmiri vegetarians, Lyodur Tschaman is cottage cheese cooked in creamy turmeric based gravy. ",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [
+      "Cottage Cheese",
+      "Mustard Oil",
+      "Ginger",
+      "Garlic",
+      "Hing",
+      "Red chillis",
+      "Whisked Curd"
+    ],
+    "servedWith": [
+      "Rice",
+      "Chapati"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      3,
+      5
+    ],
+    "foodType": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Thukpa",
+    "description": "Traditional dish of Leh Laddakh. Thukpa is a thick noodle-based soup with vegetables, if you love noodles and you love soup too then it's a delight for you.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [
+      "Carrot",
+      "Cabbage",
+      "Noodles",
+      "Ginger",
+      "Garlic",
+      "Mushroom"
+    ],
+    "servedWith": [],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      1,
+      3,
+      4,
+      5,
+      6
+    ],
+    "foodType": [
+      1
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Skyu",
+    "description": "Traditional dish of Leh. Skyu is thumb sized small pieces of wheat flour or aata,  cooked in sufficient quantity of water. It's almost like the staple food dish of the people of Ladakh. Widely preferred with other veg and non-veg dishes.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [
+      "Wheat",
+      "Flour",
+      "Ginger",
+      "Tomato",
+      "Onion",
+      "Potato",
+      "Sweet peas",
+      "Cabbage"
+    ],
+    "servedWith": [
+      "Rice",
+      "Chapati",
+      "Other dishes"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      3,
+      5
+    ],
+    "foodType": [
+      1,
+      3,
+      10
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Khambir",
+    "description": "Khambir is a pan-shaped local bread with a thick crust made from local whole wheat and it is served with butter tea which is prepared by adding salt and butter to tea.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [
+      "Wheat"
+    ],
+    "servedWith": [
+      "Tea",
+      "Coffee",
+      "Chutney",
+      "Salad"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      3,
+      6
+    ],
+    "foodType": [
+      11
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Herbal Tea",
+    "description": "Herbal tea helps people bear the chilling cold and also has numerous other health benifits. If you like to try new and different variants of tea.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [
+      "Ginger",
+      "Cardamom",
+      "Cloves",
+      "Mint",
+      "Basil"
+    ],
+    "servedWith": [
+      "Standalone"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      3
+    ],
+    "foodType": [
+      12
+    ],
+    "placesFoundIn": [
+      0
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Thenthuk",
+    "description": "noodle soup dish from the region of Leh! Thenthuk is a noodle soup prepared with wheat flour dough, mixed vegetables, and some pieces of mutton or Yak meat are addded to enhance it's taste and value.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [
+      "Veg/Chicken/Mutton/Yak",
+      "Wheat",
+      "Spices"
+    ],
+    "servedWith": [
+      "Standalone"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      1,
+      3,
+      4,
+      5,
+      6
+    ],
+    "foodType": [
+      14
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Butter Tea",
+    "description": "It is prepared by adding butter and salt to tea",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [
+      "Butter",
+      "Tea",
+      "Salt"
+    ],
+    "servedWith": [
+      "Bread"
+    ],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [
+      3
+    ],
+    "foodType": [
+      12
+    ],
+    "placesFoundIn": [
+      34
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Pulihora",
+    "description": "Pulihora, Puliyodarai, Puliyogare or simply Tamarind Rice is a common rice preparation in the South Indian states of Andhra Pradesh, Telangana, Karnataka and Tamil Nadu.",
+    "tasteLike": "Puli in Pulihora can be translated as \"sour taste\" referring to the characterizing use of tamarind as one of the main ingredients.",
+    "imageUrl": [],
+    "ingredients": ["Rice","Tamarind","Kokum","Sesame Oil","Urad Daal","Mustart Oil","Curry leaves","Ginger"],
+    "servedWith": ["Sambhar","Coconut Chutney"],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [3],
+    "foodType": [3,5],
+    "placesFoundIn": [1,24,11,23]
+  },
+  {
+    "id": 22,
+    "name": "Chepa Pulusu",
+    "description": "Chepa/Chepala pulusu is an Andhra fish curry, which is a famous spicy seafood recipe, prepared by cooking fresh fish pieces in tangy tamarind sauce with lots of hot spices.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": ["Fish","Ginger","Garlic","Tamarind","Chilli"],
+    "servedWith": ["Rice","Chapati"],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [4,5],
+    "foodType": [1,2,3,5,10],
+    "placesFoundIn": [
+      1,24,11,23
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Pesarattu",
+    "description": "It is widely eaten variety of dosa in South India. Which is made of moong daal",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": ["Moong daal","Potato","Coriander","Onion","Mustard"],
+    "servedWith": ["Sambhar","Coconut Chutney","Chilli Tamarind Chutney"],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [3,5],
+    "foodType": [],
+    "placesFoundIn": [
+      1,24,11,23
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Andhra Chicken Biryani",
+    "description": "A biriyani which has a flavour of Andhra in it.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": ["Basmati Rice","Chicken","Cardamom","Cinnamon","Star Anise","Turmaric","Ginger Garlic paste"],
+    "servedWith": ["Salan","Raita"],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [4,5],
+    "foodType": [1],
+    "placesFoundIn": [
+      0
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Gutti Vankaya Koora",
+    "description": "Prepared by using stuffed eggplant, this curry is a special Andhra dish cooked in every other house in Andhra. The tender eggplants are stuffed with roasted spicy herbs and seasonings to give to a perfect delicious taste.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": ["Eggplant","Turmeric","Chilli","Tamarind","Ginger Garlic paste"],
+    "servedWith": [],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [3,5],
+    "foodType": [1,2,10],
+    "placesFoundIn": [
+      1
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Punugulu",
+    "description": "A quick evening snack from andhra cuisine made with urad dal and rice batter.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": ["Ural dal","Rice Batter","Mustard","Cumin Seeds","Curry Leaves"],
+    "servedWith": ["Green Chuteny","Tamarind Chutney","Coconut Chutney","Sauce"],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [5,6],
+    "foodType": [2],
+    "placesFoundIn": [
+      1
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Curd Rice",
+    "description": "Widely popular in Andhra as well as Tamil Nadu, Karnataka, and Kerala, curd rice is loved by anyone who gets the taste of it. It can be easily prepared at homes by using a simple recipe with unsweetened curd, rice, and assorted vegetables.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": ["Curd","Rice","Ginger","Green Chilli","Cumin Seeds","Mustard"],
+    "servedWith": [],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [3,5],
+    "foodType": [5,6],
+    "placesFoundIn": [
+      1,24,11,23
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Bobbatlu",
+    "description": "Bobbatlu, also known as Puran Poli, is an all time favourite classic sweet dish prepared commonly in Andhra Pradesh and Maharashtra. It is considered to be very pious and is extensively prepared during important festivals and celebrations. The outer layer is prepared with wheat flour or refined flour and the inside stuffing is made with lentils and jaggery giving it a delicate and inviting taste.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": ["Chana Dal","Jaggery","Cardamom powder","Cinnamon powder","Nutmeg powder"],
+    "servedWith": ["Chutney"],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [9,3],
+    "foodType": [4],
+    "placesFoundIn": [
+      1,13
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Medu Vada",
+    "description": "The popular South Indian recipe has been the favourite in kitchens of Andhra Pradesh, Karnataka and Tamil Nadu. Known with a variety of names like Ulundu Vadai, Ulli Garelu and Uzhunnu Vada, the delicious doughnut-like savoury is prepared widely during all festivals and celebrations. The main ingredient is the Urad Dal, and hence the name.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": ["Urad daal","Oil"],
+    "servedWith": ["Coconut Chutney","Sambhar"],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [3,5],
+    "foodType": [2,8],
+    "placesFoundIn": [
+      0
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Uppindi",
+    "description": "Uppindi is a traditional UPMA made with rice rava and moongdal making it healthy and gluten free tiffin. An ideal food for breakfast and dinner. Due to its long shelf life, frequented for packed travel food on long journeys.",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": ["Broken Rice/Rawa","Moong daal","Mustard seeds","Curry leafs"],
+    "servedWith": [],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [3,5],
+    "foodType": [],
+    "placesFoundIn": [
+      0
+    ]
+  },
+  {
+    "id": 7,
+    "name": "",
+    "description": "",
+    "tasteLike": "",
+    "imageUrl": [],
+    "ingredients": [],
+    "servedWith": [],
+    "rating": 0.0,
+    "totalComments": 0,
+    "totalLikes": 0,
+    "foodCategory": [],
+    "foodType": [],
+    "placesFoundIn": [
+      2
+    ]
+  }
+]

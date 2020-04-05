@@ -16,7 +16,7 @@ import kotlin.collections.ArrayList
 const val VIEW_TYPE_ITEM = 0
 const val VIEW_TYPE_LOADING = 1
 
-abstract class LazyRecyclerAdapter<MODEL_CLASS, DATA_VH_CLASS : RecyclerView.ViewHolder, LAZYLOAD_VH_CLASS : RecyclerView.ViewHolder>(
+abstract class LazySwappableRecyclerAdapter<MODEL_CLASS, DATA_VH_CLASS : RecyclerView.ViewHolder, LAZYLOAD_VH_CLASS : RecyclerView.ViewHolder>(
     private val recyclerView: RecyclerView
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>(), ItemTouchHelperAdapter, OnStartDragListener {
 

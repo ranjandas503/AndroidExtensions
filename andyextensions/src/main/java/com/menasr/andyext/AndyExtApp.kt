@@ -20,6 +20,6 @@ internal class AndyExtApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        appCtx = applicationContext
+        AndyExtApp.appCtx = applicationContext
     }
 }

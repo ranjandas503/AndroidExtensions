@@ -1,0 +1,266 @@
+[
+  {
+    "id": 10001,
+    "food_type": "Indian"
+  },
+  {
+    "id": 10002,
+    "food_type": "Italian"
+  },
+  {
+    "id": 10003,
+    "food_type": "Mexican"
+  },
+  {
+    "id": 10004,
+    "food_type": "Chinese"
+  },
+  {
+    "id": 10005,
+    "food_type": "Japanese"
+  },
+  {
+    "id": 10006,
+    "food_type": "French"
+  },
+  {
+    "id": 10007,
+    "food_type": "Thai"
+  },
+  {
+    "id": 10008,
+    "food_type": "Vietnamese"
+  },
+  {
+    "id": 10009,
+    "food_type": "Greek"
+  },
+  {
+    "id": 10010,
+    "food_type": "Lebanese"
+  },
+  {
+    "id": 10011,
+    "food_type": "South Korea"
+  },
+  {
+    "id": 10012,
+    "food_type": "Cajun"
+  },
+  {
+    "id": 10013,
+    "food_type": "Caribbean"
+  },
+  {
+    "id": 10014,
+    "food_type": "German"
+  },
+  {
+    "id": 10015,
+    "food_type": "American"
+  },
+  {
+    "id": 10016,
+    "food_type": "Mediterranean"
+  },
+  {
+    "id": 10017,
+    "food_type": "Moroccan"
+  },
+  {
+    "id": 10018,
+    "food_type": "Russian"
+  },
+  {
+    "id": 10019,
+    "food_type": "Turkish"
+  },
+  {
+    "id": 10020,
+    "food_type": "South American"
+  },
+  {
+    "id": 10021,
+    "food_type": "Canadian"
+  },
+  {
+    "id": 10022,
+    "food_type": "Iranian"
+  },
+  {
+    "id": 10023,
+    "food_type": "United Kingdom"
+  },
+  {
+    "id": 10024,
+    "food_type": "Portuguese"
+  },
+  {
+    "id": 10025,
+    "food_type": "Scottish"
+  },
+  {
+    "id": 10026,
+    "food_type": "Belgian"
+  },
+  {
+    "id": 10027,
+    "food_type": "Swiss"
+  },
+  {
+    "id": 10028,
+    "food_type": "Middle Eastern"
+  },
+  {
+    "id": 10029,
+    "food_type": "Taiwanese"
+  },
+  {
+    "id": 10030,
+    "food_type": "Brazilian"
+  },
+  {
+    "id": 10031,
+    "food_type": "Laotian"
+  },
+  {
+    "id": 10032,
+    "food_type": "Austrian"
+  },
+  {
+    "id": 10033,
+    "food_type": "Cuban"
+  },
+  {
+    "id": 10034,
+    "food_type": "Mongolian"
+  },
+  {
+    "id": 10035,
+    "food_type": "Malaysian"
+  },
+  {
+    "id": 10036,
+    "food_type": "Cambodian"
+  },
+  {
+    "id": 10037,
+    "food_type": "Sri Lankan"
+  },
+  {
+    "id": 10038,
+    "food_type": "Tunisian"
+  },
+  {
+    "id": 10039,
+    "food_type": "Algerian"
+  },
+  {
+    "id": 10040,
+    "food_type": "Egyptian"
+  },
+  {
+    "id": 10041,
+    "food_type": "Jamaican"
+  },
+  {
+    "id": 10042,
+    "food_type": "Chilean"
+  },
+  {
+    "id": 10043,
+    "food_type": "Argentinian"
+  },
+  {
+    "id": 10044,
+    "food_type": "Argentinian"
+  },
+  {
+    "id": 10045,
+    "food_type": "Ukrainian"
+  },
+  {
+    "id": 10046,
+    "food_type": "Filipino"
+  },
+  {
+    "id": 10047,
+    "food_type": "Jewish"
+  },
+  {
+    "id": 10048,
+    "food_type": "Swedish"
+  },
+  {
+    "id": 10049,
+    "food_type": "South African"
+  },
+  {
+    "id": 10050,
+    "food_type": "Georgian"
+  },
+  {
+    "id": 10051,
+    "food_type": "Indonesian"
+  },
+  {
+    "id": 10052,
+    "food_type": "Singaporean"
+  },
+  {
+    "id": 10053,
+    "food_type": "Nepalese"
+  },
+  {
+    "id": 10054,
+    "food_type": "Ethiopian"
+  },
+  {
+    "id": 10055,
+    "food_type": "Korean"
+  },
+  {
+    "id": 10056,
+    "food_type": "Peruvian"
+  },
+  {
+    "id": 10057,
+    "food_type": "Jamaican"
+  },
+  {
+    "id": 10058,
+    "food_type": "Ice Land"
+  },
+  {
+    "id": 10059,
+    "food_type": "Macao"
+  },
+  {
+    "id": 10060,
+    "food_type": "Saudi Arabia"
+  },
+  {
+    "id": 10061,
+    "food_type": "Hawaiian"
+  },
+  {
+    "id": 10062,
+    "food_type": "Brazilian"
+  },
+  {
+    "id": 10063,
+    "food_type": "Chadian"
+  },
+  {
+    "id": 10064,
+    "food_type": "Sicilian"
+  },
+  {
+    "id": 10065,
+    "food_type": "Australian"
+  },
+  {
+    "id": 10066,
+    "food_type": "Hungarian"
+  }
+]
