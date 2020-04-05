@@ -1,4 +1,4 @@
-package com.menasr.andyext.customClasses.listeners
+package com.menasr.andyext.customClasses
 
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
  * You will get binding object by default which is <b>"mBinding"</b>*/
 abstract class CustomViewHolder<MODEL_CLASS, DATA_BINDING_CLASS : ViewDataBinding>(itemView: DATA_BINDING_CLASS) :
     RecyclerView.ViewHolder(itemView.root) {
-    internal val mBinding: DATA_BINDING_CLASS = itemView
+    val mBinding: DATA_BINDING_CLASS = itemView
 
     /**Pass your binding function here*/
     fun bindView(function: () -> Unit) {

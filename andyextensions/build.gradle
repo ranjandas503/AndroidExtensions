@@ -11,7 +11,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 3
-        versionName "1.0.5"
+        versionName "1.0.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -49,7 +49,7 @@ publish {
     repoName = 'AndyExtensions'
     groupId = 'com.menasr.andyext'
     artifactId = 'ranjan'
-    publishVersion = '1.0.4'
+    publishVersion = '1.0.6'
     desc = 'Helper library for fast development'
     website = 'https://github.com/ranjandas503/AndroidExtensions'
 }
