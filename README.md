@@ -20,7 +20,7 @@ Or
 All the methods are self explainatory, there is also a sample in it. For better understanding of the project. Some functions like,
 there are tons of other functions and features, like lazy loading adapter, recycler view intialization apapter and much more. All the methods are self explainatory.
 
-Make sure you call ```Andy.initialize(applicationContext)```, in your Application's onCrate() method. Otherwise you will get Exception.  
+Make sure you call **```Andy.initialize(applicationContext)```**, in your Application's onCrate() method. Otherwise you will get Exception.  
 
 
 ### The complete documentation can be found in the wiki section.
