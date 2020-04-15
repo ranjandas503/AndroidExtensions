@@ -3,7 +3,7 @@
 package com.menasr.andyext.extensionFunctions
 
 import android.util.Log
-import com.menasr.andyext.AndyExtApp
+import com.menasr.andyext.constantObjects.Andy
 
 fun logv(anyObject: Any, string: String = "--VERBOSE--") =
     showLog(string, anyObject.toString(), 0)
@@ -19,7 +19,7 @@ fun logAll(anyObject: Any, string: String = "--ALL--") =
     showLog(string, anyObject.toString(), 5)
 
 private fun showLog(string: String, anyObject: Any, type: Int = 0) {
-    if (!AndyExtApp.isLogDisposable)
+    if (!Andy.isLogDisposable)
         when (type) {
             0 -> Log.v(string, anyObject.toString())
             1 -> Log.d(string, anyObject.toString())

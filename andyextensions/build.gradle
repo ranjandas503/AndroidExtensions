@@ -10,8 +10,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 8
-        versionName "1.0.8"
+        versionCode 9
+        versionName "1.0.9"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -24,7 +24,9 @@ android {
         }
     }
 
+    /**As I just want the view class for generic implementation. Not for other use*/
     dataBinding {
+        //noinspection DataBindingWithoutKapt
         enabled = true
     }
 
@@ -49,7 +51,7 @@ publish {
     repoName = 'AndyExtensions'
     groupId = 'com.menasr.andyext'
     artifactId = 'ranjan'
-    publishVersion = '1.0.8'
+    publishVersion = '1.0.9'
     desc = 'Helper library for fast development'
     website = 'https://github.com/ranjandas503/AndroidExtensions'
 }

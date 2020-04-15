@@ -1,6 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.menasr.andyext" >
+<manifest package="com.menasr.andyext">
 
-    <application android:name="com.menasr.andyext.AndyExtApp"/>
 
 </manifest>

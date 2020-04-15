@@ -3,10 +3,10 @@ package com.sample.test
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import com.menasr.andyext.constantObjects.Andy
 import com.menasr.andyext.constantObjects.ConstantUtils
 import com.menasr.andyext.customClasses.LazySwappableRecyclerAdapter
-import com.menasr.andyext.extensionFunctions.initRecyclerViewAdapter
-import com.menasr.andyext.extensionFunctions.loge
+import com.menasr.andyext.extensionFunctions.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         loge(ConstantUtils.CHARACTER_POOL)
 
+        sampleview.startPulseAnimation()
 
         val adapter = AdapterLazySwappableRecycler(recyclerView)
         Handler().postDelayed({adapter.canSwapOrDrag(true)},4000)

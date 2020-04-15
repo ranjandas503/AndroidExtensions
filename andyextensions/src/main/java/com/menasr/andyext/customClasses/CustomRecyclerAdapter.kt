@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 abstract class CustomRecyclerAdapter<MODEL_CLASS, VH_CLASS : RecyclerView.ViewHolder> :
     RecyclerView.Adapter<VH_CLASS>() {
 
-    private var list: MutableList<MODEL_CLASS> = ArrayList()
+    var list: MutableList<MODEL_CLASS> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH_CLASS =
         onCreateHolder(parent, viewType)
