@@ -5,14 +5,14 @@ package com.menasr.andyext.extensionFunctions
 import android.os.SystemClock
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.menasr.andyext.AndyExtApp
+import com.menasr.andyext.constantObjects.Andy
 
 private var mLastClickTime: Long = 0
 
 /**Method to check weather we can call again or not*/
 fun canClickAgain(): Boolean {
     // Preventing multiple clicks, using threshold of 1 second
-    return if (SystemClock.elapsedRealtime() - mLastClickTime < AndyExtApp.doubleClickDuration) {
+    return if (SystemClock.elapsedRealtime() - mLastClickTime < Andy.doubleClickDuration) {
         false
     } else {
         mLastClickTime = SystemClock.elapsedRealtime()

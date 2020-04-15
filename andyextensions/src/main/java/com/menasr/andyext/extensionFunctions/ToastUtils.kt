@@ -5,7 +5,7 @@ package com.menasr.andyext.extensionFunctions
 import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.annotation.StringRes
-import com.menasr.andyext.AndyExtApp.Companion.appCtx
+import com.menasr.andyext.constantObjects.Andy
 
 /**show short toast with provided stringResourceID*/
 fun toastShort(@NonNull @StringRes stringIntId: Int) =
@@ -67,7 +67,7 @@ fun toastLong(
 )
 
 private fun showToast(msg: CharSequence, toastDuration: Int) =
-    Toast.makeText(appCtx, msg, toastDuration).show()
+    Toast.makeText(Andy.applicationContext, msg, toastDuration).show()
 
 private fun showToastWithGravity(
     msg: CharSequence,
@@ -76,7 +76,7 @@ private fun showToastWithGravity(
     xOffSet: Int,
     yOffSet: Int
 ) {
-    val toast = Toast.makeText(appCtx, msg, toastDuration)
+    val toast = Toast.makeText(Andy.applicationContext, msg, toastDuration)
     toast.setGravity(gravity, xOffSet, yOffSet)
     toast.show()
 }
