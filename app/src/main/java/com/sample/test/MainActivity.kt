@@ -3,9 +3,10 @@ package com.sample.test
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import com.menasr.andyext.constantObjects.Andy
+import androidx.lifecycle.Observer
 import com.menasr.andyext.constantObjects.ConstantUtils
 import com.menasr.andyext.customClasses.LazySwappableRecyclerAdapter
+import com.menasr.andyext.customClasses.NetworkObserver
 import com.menasr.andyext.extensionFunctions.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         sampleview.startPulseAnimation()
 
         val adapter = AdapterLazySwappableRecycler(recyclerView)
-        Handler().postDelayed({adapter.canSwapOrDrag(true)},4000)
+        Handler().postDelayed({ adapter.canSwapOrDrag(true) }, 4000)
         adapter.addLazyLoadCallback(object : LazySwappableRecyclerAdapter.LazyLoadRecyclerCallback {
             override fun onLoadMore() {
                 if (count <= 20)
@@ -38,6 +39,14 @@ class MainActivity : AppCompatActivity() {
         )
 
         adapter.addItem(generateMoreItems(5))
+
+        //Example of network observer
+        val connection = NetworkObserver(this.applicationContext);
+        connection.observe(this, Observer {
+            if (it)
+                toastShort("Connected")
+            else toastShort("Disconnected")
+        })
     }
 
     fun generateMoreItems(size: Int): MutableList<CustomModel> {
