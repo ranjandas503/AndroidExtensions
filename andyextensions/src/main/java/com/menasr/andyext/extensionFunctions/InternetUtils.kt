@@ -2,6 +2,7 @@
 
 package com.menasr.andyext.extensionFunctions
 
+import android.Manifest
 import android.Manifest.permission.*
 import android.content.Context
 import android.net.ConnectivityManager
@@ -60,6 +61,7 @@ fun isNetworkConnected(): Boolean {
  *
  * @return "wifi" if wifi is using
  */
+@RequiresPermission(Manifest.permission.READ_PHONE_STATE)
 fun getNetworkType(): String? {
     val mTelephonyManager =
         Andy.applicationContext.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
