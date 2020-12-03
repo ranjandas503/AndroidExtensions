@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit
 fun getTimeFromMillis(date_time_millisecond: String, dateFormat: String): String {
     val calendar = Calendar.getInstance()
     calendar.timeInMillis = java.lang.Long.parseLong(date_time_millisecond)
-    return SimpleDateFormat(dateFormat,Locale.getDefault()).format(calendar.time)
+    return SimpleDateFormat(dateFormat, Locale.getDefault()).format(calendar.time)
 }
 
 /**
@@ -33,7 +33,8 @@ fun getDifferenceHHmmSS(startTime: Long?, endTime: Long?, formatSpecifier: Strin
     val difference = endTime!! - startTime!!
     val days = (difference / (1000 * 60 * 60 * 24)).toInt()
     val hours = ((difference - 1000 * 60 * 60 * 24 * days) / (1000 * 60 * 60)).toInt()
-    val min = (difference - (1000 * 60 * 60 * 24 * days).toLong() - (1000 * 60 * 60 * hours).toLong()).toInt() / (1000 * 60)
+    val min =
+        (difference - (1000 * 60 * 60 * 24 * days).toLong() - (1000 * 60 * 60 * hours).toLong()).toInt() / (1000 * 60)
 
     val h: String
     val m: String
@@ -57,7 +58,7 @@ fun convertDate(date: String, defaultFormat: String, formatWanted: String): Stri
     val format1 = SimpleDateFormat(defaultFormat, Locale.getDefault())
     val format2 = SimpleDateFormat(formatWanted, Locale.getDefault())
     return try {
-        format2.format(format1.parse(date)?:date)
+        format2.format(format1.parse(date) ?: date)
     } catch (e: ParseException) {
         date
     }
@@ -74,7 +75,8 @@ fun getDifferenceInMin(startTime: Long?, endTime: Long?): Int? {
     val difference = endTime!! - startTime!!
     val days = (difference / (1000 * 60 * 60 * 24)).toInt()
     val hours = ((difference - 1000 * 60 * 60 * 24 * days) / (1000 * 60 * 60)).toInt()
-    val min = (difference - (1000 * 60 * 60 * 24 * days).toLong() - (1000 * 60 * 60 * hours).toLong()).toInt() / (1000 * 60)
+    val min =
+        (difference - (1000 * 60 * 60 * 24 * days).toLong() - (1000 * 60 * 60 * hours).toLong()).toInt() / (1000 * 60)
 
     return hours * 60 + min
 }
@@ -111,7 +113,8 @@ fun getDifference(startTime: Long, endTime: Long, rTimeConst: String): Long {
  * You can also use **TimeConst** class, which is also included in library
  * @return String date time according to DateFormat
  */
-fun getDateTimeFromMillis(millis: Long, dateFormat: String): String = SimpleDateFormat(dateFormat, Locale.getDefault()).format(Date(millis))
+fun getDateTimeFromMillis(millis: Long, dateFormat: String): String =
+    SimpleDateFormat(dateFormat, Locale.getDefault()).format(Date(millis))
 
 /**
  * @param millis provide milliseconds
@@ -176,8 +179,19 @@ fun addRemMinToHHMM(currentHHMM: String, minutes_to_add: Int?): String {
     var h: String? = null
     var m: String? = null
     try {
-        cal.set(Calendar.HOUR_OF_DAY, Integer.parseInt(currentHHMM.substring(0, currentHHMM.indexOf(':'))))
-        cal.set(Calendar.MINUTE, Integer.parseInt(currentHHMM.substring(currentHHMM.indexOf(':') + 1, currentHHMM.length)))
+        cal.set(
+            Calendar.HOUR_OF_DAY,
+            Integer.parseInt(currentHHMM.substring(0, currentHHMM.indexOf(':')))
+        )
+        cal.set(
+            Calendar.MINUTE,
+            Integer.parseInt(
+                currentHHMM.substring(
+                    currentHHMM.indexOf(':') + 1,
+                    currentHHMM.length
+                )
+            )
+        )
 
         cal.add(Calendar.MINUTE, minutes_to_add!!)
         h = "" + cal.get(Calendar.HOUR_OF_DAY)
@@ -237,9 +251,15 @@ fun getMillisFromDays(days: Long) = TimeUnit.DAYS.toSeconds(days)
  * @param millis milliseconds
  */
 fun getFormattedTime(format: String, millis: Int): String {
-    return String.format(Locale.getDefault(), format,
+    return String.format(
+        Locale.getDefault(), format,
         TimeUnit.MILLISECONDS.toMinutes(millis.toLong()),
-        TimeUnit.MILLISECONDS.toSeconds(millis.toLong()) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis.toLong())))
+        TimeUnit.MILLISECONDS.toSeconds(millis.toLong()) - TimeUnit.MINUTES.toSeconds(
+            TimeUnit.MILLISECONDS.toMinutes(
+                millis.toLong()
+            )
+        )
+    )
 }
 
 /**
@@ -251,7 +271,7 @@ fun getFormattedTime(format: String, millis: Int): String {
 fun convert24HoursTimeTo12HoursTime(hhmm: String): String {
     return try {
         val sdf = SimpleDateFormat("H:mm", Locale.getDefault())
-        SimpleDateFormat("K:mm a",Locale.getDefault()).format(sdf.parse(hhmm)?:"")
+        SimpleDateFormat("K:mm a", Locale.getDefault()).format(sdf.parse(hhmm) ?: "")
     } catch (e: ParseException) {
         e.printStackTrace()
         ""
@@ -267,9 +287,87 @@ fun convert24HoursTimeTo12HoursTime(hhmm: String): String {
  */
 fun getMillisFromHHMMSS(hhmmss: String): Long {
     return try {
-        SimpleDateFormat("HH:mm:ss",Locale.getDefault()).parse(hhmmss)?.time?:0L
+        SimpleDateFormat("HH:mm:ss", Locale.getDefault()).parse(hhmmss)?.time ?: 0L
     } catch (e: ParseException) {
         0L
     }
 
+}
+
+/***
+ * Converts ISO date string to UTC timezone equivalent.
+ *
+ * @param dateAndTime pass your date in <b>yyyy/MM/dd HH:mm:ss</b> format. Remember for 2 digit month and 2 digit day.
+ * ISO formatted time string.
+ */
+fun getUtcDateTime(dateAndTime: String?): String {
+    val d = parseDate(dateAndTime)
+    val format = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+    val sdf = SimpleDateFormat(format, Locale.getDefault())
+
+    // Convert Local Time to UTC
+    sdf.timeZone = TimeZone.getTimeZone("UTC")
+    return sdf.format(d)
+}
+
+/****
+ * Parses date string and return a [java.util.Date] object
+ *
+ * @return The ISO formatted date object
+ */
+private fun parseDate(date: String?): Date? {
+    if (date == null) {
+        return null
+    }
+    val sbDate = StringBuffer()
+    sbDate.append(date)
+    var newDate: String? = null
+    var dateDT: Date? = null
+    try {
+        newDate = sbDate.substring(0, 19).toString()
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
+    val rDate = newDate!!.replace("T", " ")
+    val nDate = rDate.replace("-".toRegex(), "/")
+    try {
+        dateDT = SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault()).parse(nDate)
+        // Log.v( TAG, "#parseDate dateDT: " + dateDT );
+    } catch (e: android.net.ParseException) {
+        e.printStackTrace()
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
+    return dateDT
+}
+
+/***
+ * Converts UTC time formatted as ISO to device local time.
+ *
+ * <br></br>
+ * <br></br>
+ * Sample usage
+ *
+ * <pre>
+ *
+ * {
+ * SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd'T'HH:mm:ss.SSS'Z'&quot;);
+ * d = toLocalTime(&quot;2014-10-08T09:46:04.455Z&quot;, sdf);
+ * }
+</pre> *
+ *
+ * @param utcDate
+ * @param format
+ * @return Date
+ * @throws Exception
+ */
+@Throws(Exception::class)
+fun utcToDateTime(utcDate: String?, sdf: SimpleDateFormat): Date {
+    // create a new Date object using
+    // the timezone of the specified city
+    sdf.timeZone = TimeZone.getTimeZone("UTC")
+    val localDate = sdf.parse(utcDate)
+    sdf.timeZone = TimeZone.getDefault()
+    val dateFormateInUTC = sdf.format(localDate)
+    return sdf.parse(dateFormateInUTC)
 }
